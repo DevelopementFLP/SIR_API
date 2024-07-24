@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>\\psig\ATYG\GONZALO\Publicaciones\SIR\API\testing</_PublishTargetUrl>
+    <History>True|2024-07-24T12:44:41.0326613Z;True|2024-07-19T12:01:59.8909026-03:00;True|2024-07-13T13:12:25.1550507-03:00;True|2024-07-13T13:11:49.2200583-03:00;True|2024-07-13T12:55:43.8008928-03:00;True|2024-07-05T09:21:01.6582665-03:00;True|2024-07-04T12:56:51.7975095-03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

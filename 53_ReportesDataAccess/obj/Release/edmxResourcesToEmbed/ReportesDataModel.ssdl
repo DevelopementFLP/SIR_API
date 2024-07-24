@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SistemaIntegralReportesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="reportes">
+    <Key>
+      <PropertyRef Name="id_reporte" />
+    </Key>
+    <Property Name="id_reporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_modulo" Type="int" Nullable="false" />
+    <Property Name="nombre_reporte" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SistemaIntegralReportesModelStoreContainer">
+    <EntitySet Name="reportes" EntityType="Self.reportes" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

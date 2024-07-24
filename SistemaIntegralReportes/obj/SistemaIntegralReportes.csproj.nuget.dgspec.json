@@ -1,0 +1,168 @@
+{
+  "format": 1,
+  "restore": {
+    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {}
+  },
+  "projects": {
+    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
+      "restore": {
+        "projectUniqueName": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
+        "projectName": "52_ControlUsuariosDataAccess",
+        "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
+      "restore": {
+        "projectUniqueName": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
+        "projectName": "53_ReportesDataAccess",
+        "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "projectName": "SistemaIntegralReportes",
+        "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "packagesPath": "C:\\Users\\gsilvera\\.nuget\\packages\\",
+        "outputPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\gsilvera\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
+                "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
+              },
+              "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
+                "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNetCore.JsonPatch": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.13, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.8.*, )"
+            },
+            "System.ServiceModel.Federation": {
+              "target": "Package",
+              "version": "[4.8.*, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.8.*, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.8.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.8.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
