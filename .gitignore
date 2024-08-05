@@ -93,10 +93,9 @@ StyleCopReport.xml
 *.log
 *.vspscc
 *.vssscc
-<<<<<<< HEAD
-=======
+
 *.vs
->>>>>>> master
+
 .builds
 *.pidb
 *.svclog
@@ -365,3 +364,19 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
+/52_ControlUsuariosDataAccess/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.csproj.AssemblyReference.cache
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.csproj.CoreCompileInputs.cache
+/53_ReportesDataAccess/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+/SistemaIntegralReportes/.vs/SistemaIntegralReportes/v17/.suo
+/SistemaIntegralReportes/.vs/SistemaIntegralReportes/v17/DocumentLayout.json
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.AssemblyInfo.cs
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.AssemblyInfoInputs.cache
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.csproj.AssemblyReference.cache
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.csproj.CoreCompileInputs.cache
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.sourcelink.json
+/SistemaIntegralReportes/obj/project.assets.json
+/SistemaIntegralReportes/obj/project.nuget.cache
+/SistemaIntegralReportes/obj/SistemaIntegralReportes.csproj.nuget.dgspec.json
