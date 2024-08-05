@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="averte\**" />
+    <Content Remove="averte\**" />
+    <EmbeddedResource Remove="averte\**" />
+    <None Remove="averte\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="MailKit" Version="4.4.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.9" />
@@ -29,10 +36,6 @@
   <ItemGroup>
     <ProjectReference Include="..\52_ControlUsuariosDataAccess\52_ControlUsuariosDataAccess.csproj" />
     <ProjectReference Include="..\53_ReportesDataAccess\53_ReportesDataAccess.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="averte\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
