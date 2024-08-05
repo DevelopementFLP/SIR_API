@@ -362,6 +362,8 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+.vs/
+
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
@@ -380,3 +382,13 @@ FodyWeavers.xsd
 /SistemaIntegralReportes/obj/project.assets.json
 /SistemaIntegralReportes/obj/project.nuget.cache
 /SistemaIntegralReportes/obj/SistemaIntegralReportes.csproj.nuget.dgspec.json
+/SistemaIntegralReportes/obj/Release/net6.0/refint/SistemaIntegralReportes.dll
+/SistemaIntegralReportes/obj/Release/net6.0/apphost.exe
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.dll
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.pdb
+/SistemaIntegralReportes/.vs/SistemaIntegralReportes/DesignTimeBuild/.dtbcache.v2
+/SistemaIntegralReportes/.vs/SistemaIntegralReportes/v17/.futdcache.v2
+/SistemaIntegralReportes/.vs/ProjectEvaluation/sistemaintegralreportes.metadata.v7.bin
+/SistemaIntegralReportes/.vs/ProjectEvaluation/sistemaintegralreportes.projects.v7.bin
+/SistemaIntegralReportes/.vs/ProjectEvaluation/sistemaintegralreportes.strings.v8.bin
+/SistemaIntegralReportes/.vs/ProjectEvaluation/sistemaintegralreportes.metadata.v7.bin

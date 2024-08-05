@@ -322,44 +322,7 @@ namespace SistemaIntegralReportes.Controllers
             }
         }
 
-        [HttpPost("InsertPedidoPadreAsync")]
-        public async Task<int> InsertPedidoPadreAsync([FromBody] List<PedidoPadre> pedidos)
-        {
-            using (var connection = new SqlConnection(_sirConnectionString))
-            {
-
-                if (connection == null) return 0;
-
-                var lastId = 0;
-
-                try
-                {
-                    connection.Open();
-                    using (var transaction = connection.BeginTransaction())
-                    {
-                        foreach (PedidoPadre pedido in pedidos)
-                        {
-                            var query = _configuration.GetSection("StockCajas:InsertPedidoPadre").Value.ToString();
-                            using (var command = new SqlCommand(query, connection, transaction))
-                            {
-                                command.Parameters.AddWithValue("@prioridad", pedido.Prioridad_Pedido_Padre);
-                                lastId = Convert.ToInt32(await command.ExecuteScalarAsync());
-                            }
-                        }
-
-                        transaction.Commit();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    if (connection != null)
-                        connection.Close();
-                    throw new Exception(ex.Message);
-                }
-
-                return lastId;
-            }
-        }
+        
 
         [HttpPost("InsertPedidoPadreAsync")]
         public async Task<int> InsertPedidoPadreAsync([FromBody] List<PedidoPadre> pedidos)
