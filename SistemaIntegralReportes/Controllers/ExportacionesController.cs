@@ -77,7 +77,7 @@ namespace SistemaIntegralReportes.Controllers
         }
 
         [HttpGet("GetDataByContainersAsync")]
-        public async Task<IEnumerable<DWContainer>?> GetDataByContainersAsync(int idCarga, string containers)
+        public async Task<IEnumerable<DWContainer>?> GetDataByContainersAsync(string idsCarga, string containers)
         {
             var query = _configuration.GetSection("Exportaciones:GetDataByContainer").Value.ToString();
             var filterContainers = "";
@@ -97,7 +97,7 @@ namespace SistemaIntegralReportes.Controllers
                 try
                 {
                     connection.Open();
-                    query = query.Replace("@filter", filterContainers).Replace("@idCarga", idCarga.ToString());
+                    query = query.Replace("@filter", filterContainers).Replace("@idCarga", idsCarga);
                     var data = await connection.QueryAsync<DWContainer>(query, commandType: CommandType.Text);
                     connection.Close();
                     return data;
@@ -244,6 +244,7 @@ namespace SistemaIntegralReportes.Controllers
                             command.Parameters.AddWithValue("@id_usuario", precio.Id_Usuario);
                             command.Parameters.AddWithValue("@id_moneda", precio.Id_Moneda);
                             await command.ExecuteNonQueryAsync();
+ 
                         }
                     }
 
@@ -268,7 +269,7 @@ namespace SistemaIntegralReportes.Controllers
                 try
                 {
                     connection.Open();
-                    
+
                     var fechas = await connection.QueryAsync<DateTime>(query, commandType: CommandType.Text);
                     connection.Close();
                     return fechas;
@@ -283,7 +284,7 @@ namespace SistemaIntegralReportes.Controllers
         }
 
         [HttpGet("GetCajasCargaAsync")]
-        public async Task<IEnumerable<DWCajaCarga>> GetCajasCargaAsync(int idCarga, string containerList)
+        public async Task<IEnumerable<DWCajaCarga>> GetCajasCargaAsync(string idsCarga, string containerList)
         {
             var query = _configuration.GetSection("Exportaciones:GetDWCajasCarga").Value.ToString();
             var filterContainers = "";
@@ -303,14 +304,14 @@ namespace SistemaIntegralReportes.Controllers
                 try
                 {
                     connection.Open();
-                    query = query.Replace("@filter", filterContainers).Replace("@idCarga", idCarga.ToString());
+                    query = query.Replace("@filter", filterContainers).Replace("@idCarga", idsCarga);
                     var cajasCarga = await connection.QueryAsync<DWCajaCarga>(query, commandType: CommandType.Text);
                     connection.Close();
                     return cajasCarga;
                 }
                 catch (Exception e)
                 {
-                    if(connection != null)
+                    if (connection != null)
                         connection.Close();
                     throw new Exception(e.Message);
                 }
@@ -330,9 +331,9 @@ namespace SistemaIntegralReportes.Controllers
                 try
                 {
                     connection.Open();
-                    if(esKosher)
+                    if (esKosher)
                         filter = "where cp.codigoKosher is not null";
-                    
+
                     query = query.Replace("@filter", filter);
                     var productos = await connection.QueryAsync<ConfProducto>(query, commandType: CommandType.Text);
                     connection.Close();
@@ -458,11 +459,11 @@ namespace SistemaIntegralReportes.Controllers
                 try
                 {
                     connection.Open();
-                  
+
                     var nombreProducto = await connection.QueryAsync<string?>(query, commandType: CommandType.Text);
-                    
+
                     connection.Close();
-                    return  nombreProducto;
+                    return nombreProducto;
                 }
                 catch (Exception e)
                 {

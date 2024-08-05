@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dVO6F98EkhLUEVXKYZPgLydBJ/YrG1XPc3wi2Pb280wxnYSj+ufudL6Oa+dEygEvcpwipFyfvuCzozqYw0WdGw==",
+  "dgSpecHash": "l3QApOVqp0b/bQkcOKNAAT650MgBohf6TN0PCABdCyXosiJrlyPDYAaPrqoXylZ2bv9S3+WML9/zkYuJmLnHxA==",
   "success": true,
-  "projectFilePath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+  "projectFilePath": "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gsilvera\\.nuget\\packages\\bouncycastle.cryptography\\2.3.0\\bouncycastle.cryptography.2.3.0.nupkg.sha512",
     "C:\\Users\\gsilvera\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
