@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {}
+    "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {}
   },
   "projects": {
-    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
+    "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
       "restore": {
-        "projectUniqueName": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
         "projectName": "52_ControlUsuariosDataAccess",
-        "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
+        "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -19,11 +19,11 @@
         "net48": {}
       }
     },
-    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
+    "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
       "restore": {
-        "projectUniqueName": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
         "projectName": "53_ReportesDataAccess",
-        "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
+        "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -34,21 +34,17 @@
         "net48": {}
       }
     },
-    "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {
+    "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "projectUniqueName": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
         "projectName": "SistemaIntegralReportes",
-        "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
-        "packagesPath": "C:\\Users\\gsilvera\\.nuget\\packages\\",
-        "outputPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\SistemaIntegralReportes\\obj\\",
+        "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "packagesPath": "C:\\Users\\rperalta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rperalta\\Source\\Repos\\SIR_API\\SistemaIntegralReportes\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gsilvera\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rperalta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,11 +59,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
-                "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
+              "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
+                "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
               },
-              "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
-                "projectPath": "\\\\sqltest\\Software\\SistemaIntegralReportes\\SistemaIntegralReportes_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
+              "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
+                "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
               }
             }
           }
@@ -76,6 +72,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -160,7 +161,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }
