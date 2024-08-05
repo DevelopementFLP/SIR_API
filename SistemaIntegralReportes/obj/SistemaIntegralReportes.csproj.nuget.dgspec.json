@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {}
   },
   "projects": {
@@ -9,6 +10,16 @@
         "projectUniqueName": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
         "projectName": "52_ControlUsuariosDataAccess",
         "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
+=======
+    "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
+        "projectName": "52_ControlUsuariosDataAccess",
+        "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj",
+>>>>>>> Stashed changes
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -19,11 +30,19 @@
         "net48": {}
       }
     },
+<<<<<<< Updated upstream
     "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
       "restore": {
         "projectUniqueName": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
         "projectName": "53_ReportesDataAccess",
         "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
+=======
+    "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
+        "projectName": "53_ReportesDataAccess",
+        "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj",
+>>>>>>> Stashed changes
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -34,6 +53,7 @@
         "net48": {}
       }
     },
+<<<<<<< Updated upstream
     "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -42,6 +62,16 @@
         "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj",
         "packagesPath": "C:\\Users\\rperalta\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes.DTO\\obj\\",
+=======
+    "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "projectName": "SistemaIntegralReportes",
+        "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "packagesPath": "C:\\Users\\gsilvera\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rperalta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -120,6 +150,7 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< Updated upstream
               "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
                 "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
               },
@@ -128,6 +159,13 @@
               },
               "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj": {
                 "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj"
+=======
+              "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
+                "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
+              },
+              "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
+                "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
+>>>>>>> Stashed changes
               }
             }
           }

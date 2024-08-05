@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e608801195dcec7b882b3a0b300e85077c70127")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+637ab9ff8311c10d771f51764efea34d074fa42a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
