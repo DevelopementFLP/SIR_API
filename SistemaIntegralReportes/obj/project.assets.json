@@ -11504,27 +11504,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rperalta\\.nuget\\packages\\": {}
+    "C:\\Users\\gsilvera\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< Updated upstream
-      "projectUniqueName": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
-      "projectName": "SistemaIntegralReportes",
-      "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
-      "packagesPath": "C:\\Users\\rperalta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
       "projectName": "SistemaIntegralReportes",
       "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
       "packagesPath": "C:\\Users\\gsilvera\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\obj\\",
->>>>>>> Stashed changes
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\rperalta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gsilvera\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11539,22 +11536,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-<<<<<<< Updated upstream
-            "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
-              "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
-            },
-            "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
-              "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
-            },
-            "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj": {
-              "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj"
-=======
             "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
               "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
             },
             "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
               "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
->>>>>>> Stashed changes
+            },
+            "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj": {
+              "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj"
             }
           }
         }
