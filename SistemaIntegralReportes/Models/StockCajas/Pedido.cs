@@ -3,6 +3,8 @@
     public class Pedido
     {
         public int Id_Pedido { get; set; }
+        
+        public int Id_Pedido_Padre {  get; set; }
         public int Id_Caja { get; set; }
         public DateTime Fecha_Pedido { get; set; }
         public int Prioridad { get; set; }

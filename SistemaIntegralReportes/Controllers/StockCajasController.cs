@@ -135,6 +135,34 @@ namespace SistemaIntegralReportes.Controllers
             }
         }
 
+        [HttpGet("GetPedidosPadreAsync")]
+        public async Task<IEnumerable<PedidoPadre>> GetPedidosPadreAsync()
+        {
+            var query = _configuration.GetSection("StockCajas:GetPedidosPadre").Value.ToString();
+
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return Enumerable.Empty<PedidoPadre>();
+
+                try
+                {
+                    connection.Open();
+
+                    var pedidos = await connection.QueryAsync<PedidoPadre>(query, commandType: CommandType.Text);
+
+                    connection.Close();
+
+                    return pedidos;
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
         [HttpGet("GetOrdenesEntregaAsync")]
         public async Task<IEnumerable<OrdenEntrega>> GetOrdenesEntregaAsync(int estado)
         {
@@ -274,8 +302,8 @@ namespace SistemaIntegralReportes.Controllers
                                 command.Parameters.AddWithValue("@stockPedido", pedido.Stock_Pedido);
                                 command.Parameters.AddWithValue("@paraStock", pedido.Para_Stock);
                                 command.Parameters.AddWithValue("@estado", pedido.Estado);
+                                command.Parameters.AddWithValue("@idPedidoPadre", pedido.Id_Pedido_Padre);
 
-           
                                 lastId = Convert.ToInt32(await command.ExecuteScalarAsync());
                             }
                         }
@@ -286,6 +314,45 @@ namespace SistemaIntegralReportes.Controllers
                 catch (Exception ex)
                 {
                     if(connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+
+                return lastId;
+            }
+        }
+
+        [HttpPost("InsertPedidoPadreAsync")]
+        public async Task<int> InsertPedidoPadreAsync([FromBody] List<PedidoPadre> pedidos)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+
+                if (connection == null) return 0;
+
+                var lastId = 0;
+
+                try
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        foreach (PedidoPadre pedido in pedidos)
+                        {
+                            var query = _configuration.GetSection("StockCajas:InsertPedidoPadre").Value.ToString();
+                            using (var command = new SqlCommand(query, connection, transaction))
+                            {
+                                command.Parameters.AddWithValue("@prioridad", pedido.Prioridad_Pedido_Padre);
+                                lastId = Convert.ToInt32(await command.ExecuteScalarAsync());
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
                         connection.Close();
                     throw new Exception(ex.Message);
                 }
@@ -518,6 +585,38 @@ namespace SistemaIntegralReportes.Controllers
                         {
                             command.Parameters.AddWithValue("@idCaja", orden.Id_Caja);
                             command.Parameters.AddWithValue("@stock", orden.Stock);
+                            await command.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        [HttpPut("UpdatePedidoPadreAsync")]
+        public async Task UpdatePedidoPadreAsync([FromBody] List<PedidoPadre> pedidos)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+
+                try
+                {
+                    connection.Open();
+
+                    foreach (PedidoPadre pedido in pedidos)
+                    {
+                        var query = _configuration.GetSection("StockCajas:UpdatePedidoPadre").Value.ToString();
+                        using (var command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@prioridad", pedido.Prioridad_Pedido_Padre);
                             await command.ExecuteNonQueryAsync();
                         }
                     }

@@ -11,7 +11,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>SistemaIntegralReportes.EntityModels.SistemaIntegralReportesContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\SistemaIntegralReportes\Properties\PublishProfiles\FolderProfile1.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\gsilvera\source\repos\SIR_API\SistemaIntegralReportes\Properties\PublishProfiles\Testing.pubxml</NameOfLastUsedPublishProfile>
     <ActiveDebugProfile>SistemaIntegralReportes</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
