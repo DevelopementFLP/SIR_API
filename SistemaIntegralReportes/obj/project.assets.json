@@ -11541,9 +11541,12 @@
             },
             "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
               "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
+<<<<<<< HEAD
             },
             "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj": {
               "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj"
+=======
+>>>>>>> master
             }
           }
         }

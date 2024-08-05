@@ -93,6 +93,10 @@ StyleCopReport.xml
 *.log
 *.vspscc
 *.vssscc
+<<<<<<< HEAD
+=======
+*.vs
+>>>>>>> master
 .builds
 *.pidb
 *.svclog

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "HFujq/VrhRM=",
+=======
+  "dgSpecHash": "ocxdX6oTKX1vno3dQEODGvjEbENczpMj5veaq4udLFw8SQ3wLFd3oAuae5+S+tWNxiE3SWEc+K0lIQl1wO+rGg==",
+>>>>>>> master
   "success": true,
   "projectFilePath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
   "expectedPackageFiles": [

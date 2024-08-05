@@ -34,6 +34,7 @@
         "net48": {}
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -106,6 +107,15 @@
         "projectName": "SistemaIntegralReportes",
         "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
         "packagesPath": "C:\\Users\\gsilvera\\.nuget\\packages\\",
+=======
+    "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "projectName": "SistemaIntegralReportes",
+        "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+        "packagesPath": "C:\\Users\\gsilvera\\.nuget\\packages\\",
+>>>>>>> master
         "outputPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -133,9 +143,12 @@
               },
               "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
                 "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
+<<<<<<< HEAD
               },
               "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj": {
                 "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes.DTO\\SistemaIntegralReportes.DTO.csproj"
+=======
+>>>>>>> master
               }
             }
           }
