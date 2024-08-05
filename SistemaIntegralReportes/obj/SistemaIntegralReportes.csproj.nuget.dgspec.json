@@ -41,7 +41,7 @@
         "projectName": "SistemaIntegralReportes",
         "projectPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
         "packagesPath": "C:\\Users\\rperalta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rperalta\\Source\\Repos\\SIR_API\\SistemaIntegralReportes\\obj\\",
+        "outputPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rperalta\\AppData\\Roaming\\NuGet\\NuGet.Config",
