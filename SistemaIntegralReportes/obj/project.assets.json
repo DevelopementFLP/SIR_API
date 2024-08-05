@@ -11434,11 +11434,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+      "projectUniqueName": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
       "projectName": "SistemaIntegralReportes",
-      "projectPath": "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+      "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
       "packagesPath": "C:\\Users\\gsilvera\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\SistemaIntegralReportes\\obj\\",
+      "outputPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11460,11 +11460,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
-              "projectPath": "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
+            "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj": {
+              "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\52_ControlUsuariosDataAccess\\52_ControlUsuariosDataAccess.csproj"
             },
-            "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
-              "projectPath": "C:\\Users\\gsilvera\\source\\repos\\SIR_API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
+            "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj": {
+              "projectPath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\53_ReportesDataAccess\\53_ReportesDataAccess.csproj"
             }
           }
         }
