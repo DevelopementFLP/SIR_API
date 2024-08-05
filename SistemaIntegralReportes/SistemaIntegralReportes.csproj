@@ -31,6 +31,10 @@
     <ProjectReference Include="..\53_ReportesDataAccess\53_ReportesDataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="averte\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
