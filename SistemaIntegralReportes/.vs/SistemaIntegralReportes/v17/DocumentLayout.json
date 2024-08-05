@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C8F6FB0-46CD-4D62-8DFF-776EBC09183F}|SistemaIntegralReportes.csproj|c:\\users\\rperalta\\source\\repos\\sir_api\\sistemaintegralreportes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C8F6FB0-46CD-4D62-8DFF-776EBC09183F}|SistemaIntegralReportes.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C8F6FB0-46CD-4D62-8DFF-776EBC09183F}|SistemaIntegralReportes.csproj|c:\\users\\rperalta\\source\\repos\\sir_api\\sistemaintegralreportes\\controllers\\dispositivos\\dispositivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C8F6FB0-46CD-4D62-8DFF-776EBC09183F}|SistemaIntegralReportes.csproj|solutionrelative:controllers\\dispositivos\\dispositivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C8F6FB0-46CD-4D62-8DFF-776EBC09183F}|SistemaIntegralReportes.csproj|c:\\users\\rperalta\\source\\repos\\sir_api\\sistemaintegralreportes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C8F6FB0-46CD-4D62-8DFF-776EBC09183F}|SistemaIntegralReportes.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAAAL8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-05T14:49:13.264Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DispositivoController.cs",
+              "DocumentMoniker": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\Controllers\\Dispositivos\\DispositivoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Dispositivos\\DispositivoController.cs",
+              "ToolTip": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\Controllers\\Dispositivos\\DispositivoController.cs",
+              "RelativeToolTip": "Controllers\\Dispositivos\\DispositivoController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T14:48:06.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAAAGYAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T14:46:40.194Z",
+              "EditorCaption": ""
             }
           ]
         }

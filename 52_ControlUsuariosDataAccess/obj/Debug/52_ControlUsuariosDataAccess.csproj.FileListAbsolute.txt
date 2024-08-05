@@ -22,3 +22,15 @@ C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuari
 \\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CopyComplete
 \\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
 \\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll.config
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.pdb
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_Contr.E68E7774.Up2Date
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
+C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb

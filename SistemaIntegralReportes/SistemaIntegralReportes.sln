@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "52_ControlUsuariosDataAcces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53_ReportesDataAccess", "..\53_ReportesDataAccess\53_ReportesDataAccess.csproj", "{EC92E3C3-484C-4158-9523-0EBBEB14B7C5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaIntegralReportes.DTO", "..\SistemaIntegralReportes.DTO\SistemaIntegralReportes.DTO.csproj", "{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EC92E3C3-484C-4158-9523-0EBBEB14B7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC92E3C3-484C-4158-9523-0EBBEB14B7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC92E3C3-484C-4158-9523-0EBBEB14B7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

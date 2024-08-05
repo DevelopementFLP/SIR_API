@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4Md9KqHSEQE=",
+  "dgSpecHash": "SXKkqQSOdvY=",
   "success": true,
   "projectFilePath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\rperalta\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\rperalta\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\rperalta\\.nuget\\packages\\bouncycastle.cryptography\\2.3.0\\bouncycastle.cryptography.2.3.0.nupkg.sha512",
     "C:\\Users\\rperalta\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\rperalta\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
