@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "SXKkqQSOdvY=",
   "success": true,
   "projectFilePath": "C:\\Users\\rperalta\\source\\repos\\SIR_API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+=======
+  "dgSpecHash": "ocxdX6oTKX1vno3dQEODGvjEbENczpMj5veaq4udLFw8SQ3wLFd3oAuae5+S+tWNxiE3SWEc+K0lIQl1wO+rGg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gsilvera\\Desktop\\SIR API\\SistemaIntegralReportes\\SistemaIntegralReportes.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [
     "C:\\Users\\rperalta\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\rperalta\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
