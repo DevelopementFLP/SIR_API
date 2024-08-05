@@ -28,9 +28,9 @@ namespace SistemaIntegralReportes.Controllers
         {
             var query = _configuration.GetSection("StockCajas:GetTiposCajas").Value.ToString();
 
-            using(var connection = new SqlConnection(_sirConnectionString))
+            using (var connection = new SqlConnection(_sirConnectionString))
             {
-                if(connection == null) return Enumerable.Empty<Tipo>();
+                if (connection == null) return Enumerable.Empty<Tipo>();
 
                 try
                 {
@@ -44,7 +44,7 @@ namespace SistemaIntegralReportes.Controllers
                 }
                 catch (Exception ex)
                 {
-                    if(connection != null)
+                    if (connection != null)
                         connection.Close();
                     throw new Exception(ex.Message);
                 }
@@ -206,7 +206,7 @@ namespace SistemaIntegralReportes.Controllers
                     connection.Open();
                     query = query.Replace("@estado", estado.ToString());
                     var ordenArmado = await connection.QueryAsync<OrdenArmado>(query, commandType: CommandType.Text);
-                    
+
                     connection.Close();
 
                     return ordenArmado;
@@ -279,10 +279,10 @@ namespace SistemaIntegralReportes.Controllers
         [HttpPost("InsertPedidoAsync")]
         public async Task<int> InsertPedidoAsync([FromBody] List<Pedido> pedidos)
         {
-            using(var connection = new SqlConnection(_sirConnectionString))
-            { 
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
 
-                if(connection == null) return 0;
+                if (connection == null) return 0;
 
                 var lastId = 0;
 
@@ -313,7 +313,46 @@ namespace SistemaIntegralReportes.Controllers
                 }
                 catch (Exception ex)
                 {
-                    if(connection != null)
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+
+                return lastId;
+            }
+        }
+
+        [HttpPost("InsertPedidoPadreAsync")]
+        public async Task<int> InsertPedidoPadreAsync([FromBody] List<PedidoPadre> pedidos)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+
+                if (connection == null) return 0;
+
+                var lastId = 0;
+
+                try
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        foreach (PedidoPadre pedido in pedidos)
+                        {
+                            var query = _configuration.GetSection("StockCajas:InsertPedidoPadre").Value.ToString();
+                            using (var command = new SqlCommand(query, connection, transaction))
+                            {
+                                command.Parameters.AddWithValue("@prioridad", pedido.Prioridad_Pedido_Padre);
+                                lastId = Convert.ToInt32(await command.ExecuteScalarAsync());
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
                         connection.Close();
                     throw new Exception(ex.Message);
                 }
@@ -415,7 +454,7 @@ namespace SistemaIntegralReportes.Controllers
                             command.Parameters.AddWithValue("@idPedido", orden.Id_Pedido);
                             command.Parameters.AddWithValue("@cajasEntregar", orden.Cajas_A_Entregar);
                             command.Parameters.AddWithValue("@cajasEntregadas", orden.Cajas_Entregadas);
- 
+
                             await command.ExecuteNonQueryAsync();
                         }
                     }
@@ -447,7 +486,7 @@ namespace SistemaIntegralReportes.Controllers
                         var query = _configuration.GetSection("StockCajas:UpdateOrdenArmadoCajasArmadas").Value.ToString();
                         using (var command = new SqlCommand(query, connection))
                         {
-                            command.Parameters.AddWithValue("@idPedido", orden.Id_Pedido);           
+                            command.Parameters.AddWithValue("@idPedido", orden.Id_Pedido);
                             command.Parameters.AddWithValue("@cajasArmadas", orden.Cajas_Armadas);
                             await command.ExecuteNonQueryAsync();
                         }
@@ -644,12 +683,12 @@ namespace SistemaIntegralReportes.Controllers
                     connection.Open();
                     var query = _configuration.GetSection("StockCajas:DeletePedido").Value.ToString();
 
-            
-                   using (var command = new SqlCommand(query, connection))
-                   {
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
                         command.Parameters.AddWithValue("@idPedido", idPedido);
                         await command.ExecuteNonQueryAsync();
-                   }
+                    }
                     connection.Close();
                 }
                 catch (Exception ex)

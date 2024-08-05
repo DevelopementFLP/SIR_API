@@ -244,7 +244,11 @@ namespace SistemaIntegralReportes.Controllers
                             command.Parameters.AddWithValue("@id_usuario", precio.Id_Usuario);
                             command.Parameters.AddWithValue("@id_moneda", precio.Id_Moneda);
                             await command.ExecuteNonQueryAsync();
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> master
                         }
                     }
 

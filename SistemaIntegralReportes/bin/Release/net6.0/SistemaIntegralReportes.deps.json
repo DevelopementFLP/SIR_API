@@ -10,6 +10,8 @@
         "dependencies": {
           "52_ControlUsuariosDataAccess": "1.0.0",
           "53_ReportesDataAccess": "1.0.0",
+          "AutoMapper": "12.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Dapper": "2.1.35",
           "MailKit": "4.4.0",
           "Microsoft.AspNet.WebApi.Cors": "5.2.9",
@@ -18,6 +20,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.16",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
           "SendGrid": "9.28.1",
+          "SistemaIntegralReportes.DTO": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.ServiceModel.Duplex": "4.8.1",
           "System.ServiceModel.Federation": "4.8.1",
@@ -27,6 +30,29 @@
         },
         "runtime": {
           "SistemaIntegralReportes.dll": {}
+        }
+      },
+      "AutoMapper/12.0.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.0"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.0"
+          }
         }
       },
       "BouncyCastle.Cryptography/2.3.0": {
@@ -2636,6 +2662,11 @@
           "53_ReportesDataAccess.dll": {}
         }
       },
+      "SistemaIntegralReportes.DTO/1.0.0": {
+        "runtime": {
+          "SistemaIntegralReportes.DTO.dll": {}
+        }
+      },
       "EntityFramework/6.0.0.0": {
         "runtime": {
           "EntityFramework.dll": {
@@ -2651,6 +2682,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "path": "automapper/12.0.1",
+      "hashPath": "automapper.12.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512"
     },
     "BouncyCastle.Cryptography/2.3.0": {
       "type": "package",
@@ -4086,6 +4131,11 @@
       "sha512": ""
     },
     "53_ReportesDataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SistemaIntegralReportes.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
