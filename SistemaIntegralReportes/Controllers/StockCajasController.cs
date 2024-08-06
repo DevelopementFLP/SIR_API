@@ -619,6 +619,7 @@ namespace SistemaIntegralReportes.Controllers
                         using (var command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@prioridad", pedido.Prioridad_Pedido_Padre);
+                            command.Parameters.AddWithValue("@idPedidoPadre", pedido.Id_Pedido_Padre);
                             await command.ExecuteNonQueryAsync();
                         }
                     }
