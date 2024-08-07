@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Org.BouncyCastle.Asn1.X500;
 using SistemaIntegralReportes.Models.StockCajas;
 using System.Data;
 
@@ -418,6 +419,78 @@ namespace SistemaIntegralReportes.Controllers
                             command.Parameters.AddWithValue("@cajasEntregar", orden.Cajas_A_Entregar);
                             command.Parameters.AddWithValue("@cajasEntregadas", orden.Cajas_Entregadas);
 
+                            await command.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        [HttpPut("UpdatePrioridadPedidoAsync")]
+        public async Task UpdatePrioridadPedidoAsync([FromBody] List<Pedido> pedidos)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+
+                try
+                {
+                    connection.Open();
+
+                    foreach (Pedido pedido in pedidos)
+                    {
+                        var query = _configuration.GetSection("StockCajas:UpdatePrioridadPedido").Value.ToString();
+                        using (var command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@idPedido", pedido.Id_Pedido);
+                            command.Parameters.AddWithValue("@prioridad", pedido.Prioridad);
+                            await command.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        [HttpPut("UpdatePedidoAsync")]
+        public async Task UpdatePedidoAsync([FromBody] List<Pedido> pedidos)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+
+                try
+                {
+                    connection.Open();
+
+                    foreach (Pedido pedido in pedidos)
+                    {
+                        var query = _configuration.GetSection("StockCajas:UpdatePedido").Value.ToString();
+                        using (var command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@idPedido", pedido.Id_Pedido);
+                            command.Parameters.AddWithValue("@idCaja", pedido.Id_Caja);
+                            command.Parameters.AddWithValue("@fechaPedido", pedido.Fecha_Pedido);
+                            command.Parameters.AddWithValue("@prioridad", pedido.Prioridad);
+                            command.Parameters.AddWithValue("@stockPedido", pedido.Stock_Pedido);
+                            command.Parameters.AddWithValue("@paraStock", pedido.Para_Stock);
+                            command.Parameters.AddWithValue("@estado", pedido.Estado);
+                            command.Parameters.AddWithValue("@idPedidoPadre", pedido.Id_Pedido_Padre);
                             await command.ExecuteNonQueryAsync();
                         }
                     }
