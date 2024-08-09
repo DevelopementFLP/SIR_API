@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ffb993e0b0e0410486b58b8ac64212065953b72")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4dc83a2b283acb67057dc568daa127d7c2c1dc7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
