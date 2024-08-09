@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaIntegralReportes", "SistemaIntegralReportes.csproj", "{1C8F6FB0-46CD-4D62-8DFF-776EBC09183F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B} = {8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "52_ControlUsuariosDataAccess", "..\52_ControlUsuariosDataAccess\52_ControlUsuariosDataAccess.csproj", "{89A13CD7-C787-4B38-A274-3A4E8229AFC4}"
 EndProject

@@ -5,6 +5,18 @@ using SistemaIntegralReportes.EntityModels;
 using SistemaIntegralReportes.Interfaces;
 using SistemaIntegralReportes.Servicios;
 
+<<<<<<< Updated upstream
+=======
+//Rodrigo
+using SistemaIntegralReportes.Repositorio.DBContext;
+using SistemaIntegralReportes.Repositorio.Automapper;
+using SistemaIntegralReportes.Servicios.Contrato;
+using SistemaIntegralReportes.Servicios.Implementacion;
+using SistemaIntegralReportes.PruebaDeRepositorio.Implementacion;
+using SistemaIntegralReportes.Repositorio.Contrato;
+using SistemaIntegralReportes.Controllers.Reportes;
+
+>>>>>>> Stashed changes
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,6 +77,25 @@ builder.Services.AddTransient<IEmailService, EmailService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+<<<<<<< Updated upstream
+=======
+
+//RODRIGO
+//Implementacion de interfaz para usarla en el proyecto
+builder.Services.AddTransient(typeof(IGenericoRepositorio<>), typeof(GenericoRepositorio<>));
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+//Implementacion de interfaz para usarla en la API
+builder.Services.AddScoped<IDispositivo, DispositivoServicio>();
+builder.Services.AddScoped<IFormateoDispositivo, FormateoDispositivoServicio>();
+builder.Services.AddScoped<ITipoDispositivo, TipoDispositivoServicio>();
+builder.Services.AddScoped<IUbicacionesDispositivo, UbicacionesDispositivoServicio>();
+builder.Services.AddScoped<IListaDeCajas, ListaDeCajasServicio>();
+builder.Services.AddScoped<IMermaPorPeso, MermaPorPesoServicio>();
+
+
+
+>>>>>>> Stashed changes
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();

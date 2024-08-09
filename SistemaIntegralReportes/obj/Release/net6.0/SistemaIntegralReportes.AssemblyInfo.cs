@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fa208ccd40cab0c8f924ef41398c41891768bd8")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e75364fb506b399c6f5c63de8161c7f596314321")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaIntegralReportes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
