@@ -88,7 +88,7 @@ builder.Services.AddScoped<IFormateoDispositivo, FormateoDispositivoServicio>();
 builder.Services.AddScoped<ITipoDispositivo, TipoDispositivoServicio>();
 builder.Services.AddScoped<IUbicacionesDispositivo, UbicacionesDispositivoServicio>();
 builder.Services.AddScoped<IListaDeCajas, ListaDeCajasServicio>();
-
+builder.Services.AddScoped<IMermaPorPeso, MermaPorPesoServicio>();
 
 
 builder.Services.AddControllers();
