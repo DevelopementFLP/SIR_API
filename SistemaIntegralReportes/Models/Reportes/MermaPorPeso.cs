@@ -9,9 +9,10 @@ namespace SistemaIntegralReportes.Models.Reportes
         private string _carcassId = string.Empty;
         private string _ladoAnimal = string.Empty;
         private string _diferenciaDePeso = string.Empty;
-        private float _pesoInnova = 0;
+        private double _pesoInnova = 0;
         private double _pesoLocal = 0;
         private double _porsentajeDeMerma = 0;
+        private decimal _porsentajePorMenudencia = 0;
         private Int32 _seccionDelDia = 0;
         private string _etiqueta = string.Empty;
         private string _tropa = string.Empty;
@@ -48,7 +49,7 @@ namespace SistemaIntegralReportes.Models.Reportes
             set { _diferenciaDePeso = value; }
         }
 
-        public float PesoInnova
+        public double PesoInnova
         {
             get { return _pesoInnova; }
             set { _pesoInnova = value; }
@@ -70,6 +71,12 @@ namespace SistemaIntegralReportes.Models.Reportes
         {
             get { return _porsentajeDeMerma; }
             set { _porsentajeDeMerma = value; }
+        }
+
+        public decimal PorsentajePorMenudencia
+        {
+            get { return _porsentajePorMenudencia; }
+            set { _porsentajePorMenudencia = value; }
         }
 
         public string Etiqueta
