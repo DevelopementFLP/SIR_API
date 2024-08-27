@@ -46,3 +46,15 @@ C:\Users\gsilvera\Desktop\SIR API\53_ReportesDataAccess\obj\Debug\53_ReportesDat
 C:\Users\gsilvera\Desktop\SIR API\53_ReportesDataAccess\obj\Debug\53_Repor.6207128D.Up2Date
 C:\Users\gsilvera\Desktop\SIR API\53_ReportesDataAccess\obj\Debug\53_ReportesDataAccess.dll
 C:\Users\gsilvera\Desktop\SIR API\53_ReportesDataAccess\obj\Debug\53_ReportesDataAccess.pdb
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\bin\Debug\53_ReportesDataAccess.dll.config
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\bin\Debug\53_ReportesDataAccess.dll
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\bin\Debug\53_ReportesDataAccess.pdb
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\obj\Debug\53_ReportesDataAccess.csproj.AssemblyReference.cache
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\obj\Debug\53_ReportesDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\obj\Debug\53_Repor.6207128D.Up2Date
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\obj\Debug\53_ReportesDataAccess.dll
+C:\Users\rperalta\source\SIR_API\53_ReportesDataAccess\obj\Debug\53_ReportesDataAccess.pdb
