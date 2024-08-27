@@ -258,6 +258,70 @@ namespace SistemaIntegralReportes.Controllers
             }
         }
 
+        [HttpGet("GetPrecioToneladaCodigoFechaAsync")]
+        public async Task<double> GetPrecioToneladaCodigoFechaAsync(string codigo, DateTime fecha)
+        {
+
+            var query = _configuration.GetSection("Exportaciones:GetCodigoPrecioFecha").Value.ToString();
+
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return 0;
+
+                try
+                {
+                    connection.Open();
+
+                    query = query.Replace("@codigoProducto", codigo).Replace("@fechaProduccion", fecha.ToString("yyyy-MM-dd"));
+
+                    var precio = await connection.QueryFirstOrDefaultAsync<double>(query, commandType: CommandType.Text);
+                    connection.Close();
+                    return precio;
+                }
+                catch (Exception e)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
+        [HttpPut("UpdateCodigoPreciosAsync")]
+        public async Task UpdateCodigoPreciosAsync([FromBody] List<CodigoFechaPrecios> codigosPrecios)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+
+                try
+                {
+                    connection.Open();
+                    foreach (var codigo in codigosPrecios)
+                    {
+                            var query = _configuration.GetSection("Exportaciones:UpdateCodigoPrecio").Value.ToString();
+                            using (var command = new SqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@codigoProducto", codigo.Codigo);
+                                command.Parameters.AddWithValue("@fechaProduccion", codigo.FechaProduccion.ToString("yyyy-MM-dd"));
+                                command.Parameters.AddWithValue("@precioTonelada", codigo.Precio);
+
+                                await command.ExecuteNonQueryAsync();
+                            }
+                        
+                    }
+                    
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
         [HttpGet("GetFechasAsync")]
         public async Task<IEnumerable<DateTime>> GetFechasAsync()
         {
@@ -473,6 +537,7 @@ namespace SistemaIntegralReportes.Controllers
                 }
             }
         }
+
         #endregion
 
         #endregion
