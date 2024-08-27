@@ -46,3 +46,15 @@ C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_Cont
 C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_Contr.E68E7774.Up2Date
 C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
 C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll.config
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.pdb
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\obj\Debug\52_Contr.E68E7774.Up2Date
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
+C:\Users\gsilvera\Desktop\SIRAPI\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
