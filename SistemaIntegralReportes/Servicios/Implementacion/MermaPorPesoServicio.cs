@@ -46,16 +46,19 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
                                 string carcasId = reader.GetString(2);
                                 string ladoAnimal = reader.GetString(3);
                                 string diferenciaDePeso = reader.GetString(4);
-                                float pesoInnova = reader.GetFloat(5);
+                                double pesoInnova = reader.GetDouble(5);
                                 double pesoLocal = reader.GetDouble(6);
                                 double porsentajeDeMerma = reader.GetDouble(7);
-                                Int32 seccionDelDia = reader.GetInt32(8);
-                                string etiqueta = reader.GetString(9);
-                                string tropa = reader.GetString(10);
-                                string proveedor = reader.GetString(11);
+                                decimal porsentajePorMenudencia = reader.GetDecimal(8);
+                                Int32 seccionDelDia = reader.GetInt32(9);
+                                string etiqueta = reader.GetString(10);
+                                string tropa = reader.GetString(11);
+                                string proveedor = reader.GetString(12);
 
                                 //Modificacion de modelo
+                                pesoInnova = Math.Round(pesoInnova, 2);
                                 porsentajeDeMerma = Math.Round(porsentajeDeMerma, 2);
+                                
 
                                 if(seccionDelDia == 0 || seccionDelDia < 5)
                                 {
@@ -67,8 +70,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
                                     seccionDelDia = ParteDelDia;
                                 }
 
-                                if (seccionDelDia == 2)
-                                {
                                     MermaPorPeso lista = new MermaPorPeso
                                     {
                                         FechaDeBalanza = fechaDeBalanza.ToString("yyyy-MM-dd HH:mm:ss.fff"),
@@ -79,19 +80,27 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
                                         PesoInnova = pesoInnova,
                                         PesoLocal = pesoLocal,
                                         PorsentajeDeMerma = porsentajeDeMerma,
+                                        PorsentajePorMenudencia = porsentajePorMenudencia,
                                         SeccionDelDia = seccionDelDia,
                                         Etiqueta = etiqueta,
                                         Tropa = tropa,
                                         Proveedor = proveedor,
                                     };
 
-                                    miListaDeMermasPorFecha.Add(lista);
-                                }                                                                                               
+                                    miListaDeMermasPorFecha.Add(lista);                                                                                      
                             }
                         }
                     }
                     connection.Close();
                 }
+
+                var listaPartedelDia2 = miListaDeMermasPorFecha.Where(parte => parte.SeccionDelDia == 2).ToList();
+
+                if (listaPartedelDia2.Any())
+                {
+                    return listaPartedelDia2.OrderBy(a => a.FechaDeBalanza).ToList();
+                }
+
                 return miListaDeMermasPorFecha.OrderBy(a => a.FechaDeBalanza).ToList();
             }
             catch (Exception ex)
