@@ -40,14 +40,14 @@ namespace SistemaIntegralReportes.Controllers.Abasto
         }
 
         [HttpGet("insertarLecturaDeMedia")]
-        public async Task<IActionResult> InsertarLecturaDeAbasto(string lecturaDeAbasto, string operacion, DateTime? fechaDeFaena, decimal? peso)
+        public async Task<IActionResult> InsertarLecturaDeAbasto(string lecturaDeAbasto, string operacion, string usuarioLogueado, DateTime? fechaDeFaena, decimal? peso)
         {
             var response = new ResponseDto<LecturaDeAbastoDTO>();
 
             try
             {
                 response.EsCorrecto = true;
-                response.Resultado = await _lecturaDeMedia.InsertarLectura(lecturaDeAbasto, operacion, fechaDeFaena, peso);
+                response.Resultado = await _lecturaDeMedia.InsertarLectura(lecturaDeAbasto, operacion, usuarioLogueado ,fechaDeFaena, peso);
 
             }
             catch (Exception ex)
