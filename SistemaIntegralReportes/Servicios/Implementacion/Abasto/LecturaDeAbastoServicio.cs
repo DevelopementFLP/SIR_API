@@ -54,6 +54,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                 string idAnimal = reader.GetString(2);
                                 string secuencial = reader.GetString(3);
                                 string operacion = reader.GetString(4);
+                                string usuarioLogueado = reader.GetString(7);                                
 
 
                                 LecturaDeAbastoDTO lecturas = new LecturaDeAbastoDTO
@@ -62,7 +63,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     LecturaDeMedia = lecturaDeMedia,
                                     IdAnimal = idAnimal,
                                     Secuencial = secuencial,
-                                    Operacion = operacion
+                                    Operacion = operacion,
+                                    UsuarioLogueado= usuarioLogueado
                                 };
 
                                 _listaDeLecturas.Add(lecturas);
@@ -79,7 +81,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             }
         }
 
-        public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, DateTime? fechaDeFaena = null, decimal? peso = null)
+        public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado , DateTime? fechaDeFaena = null, decimal? peso = null)
         {
             LecturaDeAbastoDTO lecturaDeMediaInsert = new LecturaDeAbastoDTO();
             string parseoDeLectura = "";
@@ -119,6 +121,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                         command.Parameters.AddWithValue("@peso", peso);
                         command.Parameters.AddWithValue("@fechaDeFaena", fechaDeFaena);
 
+                        command.Parameters.AddWithValue("@usuarioLogueado", usuarioLogueado);
+
                         await command.ExecuteNonQueryAsync();
 
                         lecturaDeMediaInsert.LecturaDeMedia = lecturaDeMedia;
@@ -127,6 +131,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                         lecturaDeMediaInsert.Operacion = operacion;
                         lecturaDeMediaInsert.Peso = peso;
                         lecturaDeMediaInsert.FechaDeFaena = fechaDeFaena;
+                        lecturaDeMediaInsert.UsuarioLogueado = usuarioLogueado;
                     }
                 }
 
@@ -167,9 +172,10 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                 string proveedor = reader.GetString(4);
                                 float peso = reader.GetFloat(5);
                                 DateTime fechaFaena = reader.GetDateTime(6);
-                                string clasificacion = reader.GetString(7);
+                                string clasificacion = reader.GetString(7);                               
                                 string secuencial = reader.GetString(8);
                                 string operacion = reader.GetString(9);
+                                
 
 
                                 ListaDeLecturasAbasto lecturas = new ListaDeLecturasAbasto
@@ -183,7 +189,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     FechaDeFaena = fechaFaena.ToString("yyyy-MM-dd HH:mm:ss.fff"),
                                     Clasificacion = clasificacion,
                                     Secuencial = secuencial,
-                                    Operacion = operacion,
+                                    Operacion = operacion                                    
                                 };
 
                                 _listaDeLecturas.Add(lecturas);
