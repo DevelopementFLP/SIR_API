@@ -33,6 +33,22 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Ignorar carpetas de compilación
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Archivos binarios de depuración
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
+*.json
+*.txt
+
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
