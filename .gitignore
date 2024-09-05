@@ -33,6 +33,12 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Ignorar carpetas de compilación
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -367,6 +373,8 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
+/52_ControlUsuariosDataAccess/obj/
+/52_ControlUsuariosDataAccess/bin/
 /52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
 /52_ControlUsuariosDataAccess/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
 /53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.csproj.AssemblyReference.cache
@@ -399,3 +407,26 @@ FodyWeavers.xsd
 /53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.csproj.AssemblyReference.cache
 /53_ReportesDataAccess/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 /SistemaIntegralReportes/obj/SistemaIntegralReportes.csproj.nuget.g.props
+/52_ControlUsuariosDataAccess/bin/Debug/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/bin/Debug/52_ControlUsuariosDataAccess.pdb
+/52_ControlUsuariosDataAccess/bin/Release/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/bin/Release/52_ControlUsuariosDataAccess.pdb
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.csproj.FileListAbsolute.txt
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.pdb
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.csproj.FileListAbsolute.txt
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.pdb
+/53_ReportesDataAccess/bin/Debug/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/bin/Debug/53_ReportesDataAccess.pdb
+/53_ReportesDataAccess/bin/Release/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/bin/Release/53_ReportesDataAccess.pdb
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.csproj.CoreCompileInputs.cache
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.csproj.FileListAbsolute.txt
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.pdb
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.csproj.FileListAbsolute.txt
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.pdb
+/.gitignore
