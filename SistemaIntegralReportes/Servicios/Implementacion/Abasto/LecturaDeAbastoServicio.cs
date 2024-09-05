@@ -5,7 +5,10 @@ using SistemaIntegralReportes.DTO.Abasto;
 using SistemaIntegralReportes.Models.Reportes;
 using SistemaIntegralReportes.Models.Reportes.ReporteAbasto;
 using SistemaIntegralReportes.Servicios.Contrato.Abasto;
+<<<<<<< HEAD
 using System.Data;
+=======
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
 
 namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
 {
@@ -24,6 +27,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             _mapper = mapper;
         }
 
+<<<<<<< HEAD
         public async Task<LecturaDeAbastoDTO> GetCodigoQrFiltrado(string codigoQr)
         {
 
@@ -75,6 +79,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                 throw ex;
             }
         }
+=======
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
 
         public async Task<List<LecturaDeAbastoDTO>> GetLecturaDeAbasto()
         {
@@ -133,7 +139,11 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             }
         }
 
+<<<<<<< HEAD
         public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado , DateTime? fechaDeFaena = null, decimal? peso = null )
+=======
+        public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado , DateTime? fechaDeFaena = null, decimal? peso = null)
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
         {
             LecturaDeAbastoDTO lecturaDeMediaInsert = new LecturaDeAbastoDTO();
             string parseoDeLectura = "";
@@ -147,7 +157,11 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             
             if(fechaDeFaena == null || peso == null)
             {
+<<<<<<< HEAD
                 fechaDeFaena = DateTime.Now.Date;
+=======
+                fechaDeFaena = DateTime.Now;
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
                 peso = 0;
             }
 
@@ -164,10 +178,17 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                         command.Parameters.AddWithValue("@lecturaDeMedia", lecturaDeMedia);
                         command.Parameters.AddWithValue("@operacion", operacion);
 
+<<<<<<< HEAD
                         parseoDeLectura = lecturaDeMedia.Substring(22, 13);
                         command.Parameters.AddWithValue("@idAnimal", parseoDeLectura);                   
                         
                         parseoSecuencial = lecturaDeMedia.Substring(30, 4);
+=======
+                        parseoDeLectura = lecturaDeMedia.Substring(22,13);
+                        command.Parameters.AddWithValue("@idAnimal", parseoDeLectura);
+
+                        parseoSecuencial = lecturaDeMedia.Substring(31, 3);
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
                         command.Parameters.AddWithValue("@secuencial", parseoSecuencial);
 
                         command.Parameters.AddWithValue("@peso", peso);
@@ -238,7 +259,11 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     Tropa = tropa,
                                     Proveedor = proveedor,
                                     Peso = peso,
+<<<<<<< HEAD
                                     FechaDeFaena = fechaFaena.ToString("yyyy-MM-dd"),
+=======
+                                    FechaDeFaena = fechaFaena.ToString("yyyy-MM-dd HH:mm:ss.fff"),
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
                                     Clasificacion = clasificacion,
                                     Secuencial = secuencial,
                                     Operacion = operacion                                    
@@ -257,7 +282,10 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                 throw ex;
             }
         }
+<<<<<<< HEAD
 
        
+=======
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
     }
 }
