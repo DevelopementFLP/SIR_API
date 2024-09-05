@@ -1,48 +1,12 @@
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll.config
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.pdb
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.dll
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.dll
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.xml
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.xml
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CopyComplete
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
-C:\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll.config
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.pdb
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.dll
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.dll
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.xml
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.xml
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CopyComplete
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
-\\sqltest\Software\SistemaIntegralReportes\SistemaIntegralReportes_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll.config
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.pdb
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.dll
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.xml
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_Contr.E68E7774.Up2Date
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
-C:\Users\rperalta\source\repos\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll.config
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.pdb
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.dll
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.xml
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_Contr.E68E7774.Up2Date
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
-C:\Users\gsilvera\Desktop\SIR API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll.config
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.dll
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\52_ControlUsuariosDataAccess.pdb
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.AssemblyReference.cache
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_Contr.E68E7774.Up2Date
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.dll
+C:\Users\rperalta\source\SIR_API\52_ControlUsuariosDataAccess\obj\Debug\52_ControlUsuariosDataAccess.pdb
