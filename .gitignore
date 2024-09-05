@@ -36,6 +36,8 @@ bld/
 # Archivos binarios de depuración
 bin/
 obj/
+**/bin/
+**/obj/
 *.dll
 *.pdb
 *.cache
