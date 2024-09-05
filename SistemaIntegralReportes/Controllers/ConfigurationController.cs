@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using SistemaIntegralReportes.DTO.Abasto;
+using SistemaIntegralreportes.DTO;
 using SistemaIntegralReportes.Models;
 using System.Configuration;
 using System.Data;
+using SistemaIntegralReportes.Models.Configuraciones;
 
 namespace SistemaIntegralReportes.Controllers
 {
@@ -172,5 +175,5 @@ namespace SistemaIntegralReportes.Controllers
             }
         }
         #endregion
-    }
+    }   
 }
