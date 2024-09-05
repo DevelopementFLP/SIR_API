@@ -33,13 +33,7 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# Ignorar carpetas de compilación
-bin/
-obj/
-[Bb]in/
-[Oo]bj/
-
-# Archivos binarios de depuración
+# Archivos binarios de depuraciÃ³n
 bin/
 obj/
 *.dll
