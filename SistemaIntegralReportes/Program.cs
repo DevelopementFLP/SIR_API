@@ -12,6 +12,8 @@ using SistemaIntegralReportes.Servicios.Contrato;
 using SistemaIntegralReportes.Servicios.Implementacion;
 using SistemaIntegralReportes.PruebaDeRepositorio.Implementacion;
 using SistemaIntegralReportes.Repositorio.Contrato;
+using SistemaIntegralReportes.Servicios.Contrato.Abasto;
+using SistemaIntegralReportes.Servicios.Implementacion.Abasto;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -89,6 +91,8 @@ builder.Services.AddScoped<ITipoDispositivo, TipoDispositivoServicio>();
 builder.Services.AddScoped<IUbicacionesDispositivo, UbicacionesDispositivoServicio>();
 builder.Services.AddScoped<IListaDeCajas, ListaDeCajasServicio>();
 builder.Services.AddScoped<IMermaPorPeso, MermaPorPesoServicio>();
+builder.Services.AddScoped<ILecturaDeAbasto, LecturaDeAbastoServicio>();
+builder.Services.AddScoped<IConfiguracionAbasto, ConfiguracionSeccionAbasto>();
 
 
 builder.Services.AddControllers();
