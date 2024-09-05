@@ -138,8 +138,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
 
                     using (SqlCommand command = new SqlCommand(sqlLecturas, connection))
                     {
-                        //Agrego el parametro de la consulta
-                        //command.Parameters.AddWithValue("@cajaBuscada", id);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
