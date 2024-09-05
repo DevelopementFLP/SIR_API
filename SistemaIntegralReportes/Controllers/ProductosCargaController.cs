@@ -27,11 +27,13 @@ namespace SistemaIntegralReportes.Controllers
         }
 
         [HttpGet("productosCarga")]
-        public async Task<ActionResult<ProductoCarga>> GetAnimalFaena([FromQuery] DateTime fechaDesde, DateTime fechaHasta)
+        public async Task<ActionResult<ProductoCarga>> GetProductosCarga([FromQuery] DateTime fechaDesde, DateTime fechaHasta)
         {
             string formattedDateDesde = fechaDesde.ToString("yyyy-MM-dd");
             string formattedDateHasta = fechaHasta.ToString("yyyy-MM-dd");
             var endpoint = $"carga/productos?fechadesde={formattedDateDesde}&fechahasta={formattedDateHasta}";
+
+            Console.WriteLine(endpoint);
 
             HttpResponseMessage response = await _httpClient.GetAsync(endpoint);
 
