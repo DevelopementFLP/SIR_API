@@ -37,7 +37,12 @@ namespace SistemaIntegralReportes.Controllers.Abasto
                 response.Mensaje = ex.Message;
             }
             return Ok(response);
+<<<<<<< HEAD
+        }        
+
+=======
         }
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
 
         [HttpGet("insertarLecturaDeMedia")]
         public async Task<IActionResult> InsertarLecturaDeAbasto(string lecturaDeAbasto, string operacion, string usuarioLogueado, DateTime? fechaDeFaena, decimal? peso)
@@ -76,5 +81,27 @@ namespace SistemaIntegralReportes.Controllers.Abasto
             }
             return Ok(response);
         }
+<<<<<<< HEAD
+
+        [HttpGet("getLecturaDeQr")]
+        public async Task<IActionResult> getLecturaQr(string codigoQr)
+        {
+            var response = new ResponseDto<LecturaDeAbastoDTO>();
+
+            try
+            {
+                response.EsCorrecto = true;
+                response.Resultado = await _lecturaDeMedia.GetCodigoQrFiltrado(codigoQr);
+
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+            return Ok(response);
+        }
+=======
+>>>>>>> e7d8612ac88db58e64a930775e770b2a24cbcf89
     }
 }

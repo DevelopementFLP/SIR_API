@@ -123,5 +123,67 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
                 throw ex;
             }            
         }
+
+        public async Task<List<LecturasConError>> MostrarLecturasConError()
+        {
+            List<LecturasConError> _listaDeCajasConError = new List<LecturasConError>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+
+                    string sqlLecturas = _configuration.GetSection("Dispositivos:LecturasConError").Value.ToString();
+
+                    using (SqlCommand command = new SqlCommand(sqlLecturas, connection))
+                    {
+                        //Agrego el parametro de la consulta
+                        //command.Parameters.AddWithValue("@cajaBuscada", id);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Int32 idCaja = reader.GetInt32(0);
+                                string idQr = reader.GetString(1);
+                                string codigo = reader.GetString(2);
+                                string nombre = reader.GetString(3);
+                                float peso = reader.GetFloat(4);
+                                float cl = reader.GetFloat(5);
+                                DateTime fechaDeProduccion = reader.GetDateTime(6);
+                                DateTime fechaDeCreado = reader.GetDateTime(7);
+                                DateTime fechaDeCerrado = reader.GetDateTime(8);
+                                string registro = reader.GetString(9);
+                                string estado = reader.GetString(10);
+
+                                LecturasConError lectura = new LecturasConError
+                                {                                    
+                                    IdCaja = idCaja,
+                                    IdQr = idQr,
+                                    Codigo = codigo,
+                                    Nombre = nombre,
+                                    Peso = peso,
+                                    Cl = cl,
+                                    FechaDeProduccion = fechaDeProduccion.ToString("yyyy-MM-dd"),
+                                    FechaDeCreado = fechaDeCreado.ToString("yyyy-MM-dd hh:mm"),
+                                    FechaDeCerrado = fechaDeCerrado.ToString("yyyy-MM-dd"),
+                                    Registro = registro,
+                                    Estado = estado,
+                                };
+
+                                _listaDeCajasConError.Add(lectura);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+                return _listaDeCajasConError.OrderByDescending(a => a.FechaDeCreado).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
