@@ -38,6 +38,12 @@ bin/
 obj/
 **/bin/
 **/obj/
+*/bin/
+*/obj/
+*bin/
+*obj/
+**bin/
+**obj/
 *.dll
 *.pdb
 *.cache
