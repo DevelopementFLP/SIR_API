@@ -56,5 +56,24 @@ namespace SistemaIntegralReportes.Controllers.Dispositivos
             }
             return Ok(response);
         }
+
+        [HttpGet("listaDeCajasConError")]
+        public async Task<IActionResult> MostrarListaDeCajasConError()
+        {
+            var response = new ResponseDto<List<LecturasConError>>();
+
+            try
+            {
+                response.EsCorrecto = true;
+                response.Resultado = await _listaDeCajasServicio.MostrarLecturasConError();
+
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+            return Ok(response);
+        }
     }
 }

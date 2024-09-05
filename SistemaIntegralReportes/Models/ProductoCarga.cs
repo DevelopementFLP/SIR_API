@@ -12,5 +12,7 @@
         public DateTimeOffset Productiondate { get; set; }
         public DateTimeOffset Expiredate { get; set; }
         public bool Finalizada { get; set; }
+        public int Id_Pallet { get; set; }
+        public int Id_Carga { get; set; }
     }
 }
