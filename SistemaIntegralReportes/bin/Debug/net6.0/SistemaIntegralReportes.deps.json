@@ -2654,17 +2654,26 @@
       },
       "52_ControlUsuariosDataAccess/1.0.0": {
         "runtime": {
-          "52_ControlUsuariosDataAccess.dll": {}
+          "52_ControlUsuariosDataAccess.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "53_ReportesDataAccess/1.0.0": {
         "runtime": {
-          "53_ReportesDataAccess.dll": {}
+          "53_ReportesDataAccess.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "SistemaIntegralReportes.DTO/1.0.0": {
         "runtime": {
-          "SistemaIntegralReportes.DTO.dll": {}
+          "SistemaIntegralReportes.DTO.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "EntityFramework/6.0.0.0": {
