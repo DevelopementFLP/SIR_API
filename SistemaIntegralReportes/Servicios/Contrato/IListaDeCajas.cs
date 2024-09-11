@@ -9,5 +9,7 @@ namespace SistemaIntegralReportes.Servicios.Contrato
     {
         Task<List<ListaDeCajas>> BuscarListaDeLecturas(string id);
         Task<List<ListaDeCajas>> BuscarListaDeExportaciones(string id);
+
+        Task<List<LecturasConError>> MostrarLecturasConError();
     }
 }

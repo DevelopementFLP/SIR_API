@@ -33,6 +33,12 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Ignorar carpetas de compilación
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -399,3 +405,43 @@ FodyWeavers.xsd
 /53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.csproj.AssemblyReference.cache
 /53_ReportesDataAccess/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 /SistemaIntegralReportes/obj/SistemaIntegralReportes.csproj.nuget.g.props
+/52_ControlUsuariosDataAccess/bin/Debug/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/bin/Debug/52_ControlUsuariosDataAccess.pdb
+/52_ControlUsuariosDataAccess/bin/Release/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/bin/Release/52_ControlUsuariosDataAccess.pdb
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.csproj.CoreCompileInputs.cache
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.csproj.FileListAbsolute.txt
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/obj/Debug/52_ControlUsuariosDataAccess.pdb
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.csproj.FileListAbsolute.txt
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.dll
+/52_ControlUsuariosDataAccess/obj/Release/52_ControlUsuariosDataAccess.pdb
+/53_ReportesDataAccess/bin/Debug/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/bin/Debug/53_ReportesDataAccess.pdb
+/53_ReportesDataAccess/bin/Release/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/bin/Release/53_ReportesDataAccess.pdb
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.csproj.CoreCompileInputs.cache
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.csproj.FileListAbsolute.txt
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/obj/Debug/53_ReportesDataAccess.pdb
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.csproj.FileListAbsolute.txt
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.dll
+/53_ReportesDataAccess/obj/Release/53_ReportesDataAccess.pdb
+/SistemaIntegralReportes/bin/Debug/net6.0/52_ControlUsuariosDataAccess.dll
+/SistemaIntegralReportes/bin/Debug/net6.0/52_ControlUsuariosDataAccess.pdb
+/SistemaIntegralReportes/bin/Debug/net6.0/53_ReportesDataAccess.dll
+/SistemaIntegralReportes/bin/Debug/net6.0/53_ReportesDataAccess.pdb
+/SistemaIntegralReportes/bin/Debug/net6.0/appsettings.json
+/SistemaIntegralReportes/bin/Debug/net6.0/SistemaIntegralReportes.deps.json
+/SistemaIntegralReportes/bin/Debug/net6.0/SistemaIntegralReportes.staticwebassets.runtime.json
+/SistemaIntegralReportes/obj/Debug/net6.0/ref/SistemaIntegralReportes.dll
+/SistemaIntegralReportes/obj/Debug/net6.0/refint/SistemaIntegralReportes.dll
+/SistemaIntegralReportes/obj/Debug/net6.0/SistemaIntegralReportes.csproj.CoreCompileInputs.cache
+/SistemaIntegralReportes/obj/Debug/net6.0/SistemaIntegralReportes.csproj.FileListAbsolute.txt
+/SistemaIntegralReportes/obj/Debug/net6.0/SistemaIntegralReportes.genruntimeconfig.cache
+/SistemaIntegralReportes/obj/Debug/net6.0/SistemaIntegralReportes.sourcelink.json
+/SistemaIntegralReportes/obj/Debug/net6.0/staticwebassets.build.json
+/SistemaIntegralReportes/obj/Debug/net6.0/staticwebassets.development.json
+/SistemaIntegralReportes/obj/Debug/net6.0/staticwebassets.pack.json
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.assets.cache
+/SistemaIntegralReportes/obj/Release/net6.0/SistemaIntegralReportes.GeneratedMSBuildEditorConfig.editorconfig
