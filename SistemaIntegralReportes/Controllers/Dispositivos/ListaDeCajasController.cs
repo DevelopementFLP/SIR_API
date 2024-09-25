@@ -19,7 +19,7 @@ namespace SistemaIntegralReportes.Controllers.Dispositivos
             _listaDeCajasServicio = listaDeCajasServicio;
         }
 
-        [HttpGet("listaDeLecturas/{Id:int}")]
+        [HttpGet("listaDeLecturas")]
         public async Task<IActionResult> BuscarListaDeLecturas(string Id)
         {
             var response = new ResponseDto<List<ListaDeCajas>>();
@@ -38,7 +38,7 @@ namespace SistemaIntegralReportes.Controllers.Dispositivos
             return Ok(response);
         }
 
-        [HttpGet("listaDeExpoCarga/{Id:int}")]
+        [HttpGet("listaDeExpoCarga")]
         public async Task<IActionResult> BuscarListaDeExportaciones(string Id)
         {
             var response = new ResponseDto<List<ListaDeCajas>>();

@@ -13,12 +13,10 @@ namespace SistemaIntegralReportes.Controllers.Cuota
     {
         private readonly IConfiguration _configuration;
         private readonly string _innovaConnectionString;
-        private readonly string _sirConnectionString;
-        public LoteEntradaController(IConfiguration configuration)
+        public LoteEntradaController(IConfiguration configuration) 
         {
             _configuration = configuration;
             _innovaConnectionString = configuration.GetConnectionString("InnovaProduccion");
-            _sirConnectionString = configuration.GetConnectionString("SqlTestConection");
         }
 
         [HttpGet("GetLotesEntradaAsync")]
@@ -53,67 +51,6 @@ namespace SistemaIntegralReportes.Controllers.Cuota
                 }
             }
 
-        }
-
-        [HttpGet("GetDWEntradaAsync")]
-        public async Task<IEnumerable<LoteEntradaDTO>> GetDWEntradaAsync(DateTime fechaProduccionDesde, DateTime fechaProduccionHasta, string lotesStr)
-        {
-            var query = _configuration.GetSection("ReporteCuota:DWEntradaPorLotesYFechas").Value;
-            query = query.Replace("@lotes", lotesStr);
-
-            using (var connection = new SqlConnection(_sirConnectionString))
-            {
-                if (connection == null) return Enumerable.Empty<LoteEntradaDTO>();
-
-                try
-                {
-                    connection.Open();
-
-                    var parameters = new DynamicParameters();
-                    parameters.Add("@fechaDesde", fechaProduccionDesde, DbType.DateTime);
-                    parameters.Add("@fechaHasta", fechaProduccionHasta, DbType.DateTime);
-
-                    var lotes = await connection.QueryAsync<LoteEntradaDTO>(query, parameters, commandType: CommandType.Text);
-
-                    return lotes;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error al ejecutar el procedimiento almacenado: " + ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-        }
-
-        [HttpGet("GetUltimaFechaAsync")]
-        public async Task<DateTime?> GetUltimaFechaAsync()
-        {
-            var query = _configuration.GetSection("ReporteCuota:SelecionarUltimaFecha").Value;
-
-            using (var connection = new SqlConnection(_sirConnectionString))
-            {
-                if (connection == null) return null;
-
-                try
-                {
-                    connection.Open();
-
-                    var fecha = await connection.QueryFirstOrDefaultAsync<DateTime?>(query, commandType: CommandType.Text);
-
-                    return fecha;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error al ejecutar el procedimiento almacenado: " + ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
         }
 
     }

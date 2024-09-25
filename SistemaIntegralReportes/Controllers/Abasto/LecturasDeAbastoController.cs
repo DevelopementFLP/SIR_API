@@ -37,9 +37,7 @@ namespace SistemaIntegralReportes.Controllers.Abasto
                 response.Mensaje = ex.Message;
             }
             return Ok(response);
-
         }        
-
 
 
         [HttpGet("insertarLecturaDeMedia")]
@@ -80,7 +78,6 @@ namespace SistemaIntegralReportes.Controllers.Abasto
             return Ok(response);
         }
 
-
         [HttpGet("getLecturaDeQr")]
         public async Task<IActionResult> getLecturaQr(string codigoQr)
         {
@@ -99,6 +96,5 @@ namespace SistemaIntegralReportes.Controllers.Abasto
             }
             return Ok(response);
         }
-
     }
 }

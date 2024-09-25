@@ -7,7 +7,6 @@ using SistemaIntegralReportes.Models.Reportes.ReporteAbasto;
 using SistemaIntegralReportes.Servicios.Contrato.Abasto;
 using System.Data;
 
-
 namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
 {
     public class LecturaDeAbastoServicio : ILecturaDeAbasto
@@ -82,7 +81,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
 
             List<LecturaDeAbastoDTO> _listaDeLecturas = new List<LecturaDeAbastoDTO>();
 
-            string fechaDelDia = DateTime.Now.ToString("yyyyMMdd");
+            string fechaDelDia = DateTime.Now.ToString("yyyyMMdd" + " 23:59:59.000");
 
 
             try
@@ -135,7 +134,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
         }
 
         public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado , DateTime? fechaDeFaena = null, decimal? peso = null )
-
         {
             LecturaDeAbastoDTO lecturaDeMediaInsert = new LecturaDeAbastoDTO();
             string parseoDeLectura = "";
@@ -149,9 +147,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             
             if(fechaDeFaena == null || peso == null)
             {
-
                 fechaDeFaena = DateTime.Now.Date;
-
                 peso = 0;
             }
 
@@ -172,7 +168,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                         command.Parameters.AddWithValue("@idAnimal", parseoDeLectura);                   
                         
                         parseoSecuencial = lecturaDeMedia.Substring(30, 4);
-
                         command.Parameters.AddWithValue("@secuencial", parseoSecuencial);
 
                         command.Parameters.AddWithValue("@peso", peso);
@@ -244,7 +239,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     Proveedor = proveedor,
                                     Peso = peso,
                                     FechaDeFaena = fechaFaena.ToString("yyyy-MM-dd"),
-
                                     Clasificacion = clasificacion,
                                     Secuencial = secuencial,
                                     Operacion = operacion                                    
@@ -264,5 +258,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             }
         }
 
+       
     }
 }

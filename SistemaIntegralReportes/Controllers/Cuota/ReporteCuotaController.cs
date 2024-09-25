@@ -109,38 +109,15 @@ namespace SistemaIntegralReportes.Controllers.Cuota
         public async Task<IEnumerable<QamarkDTO>> GetQamarks()
         {
             var query = _configuration.GetSection("ReporteCuota:GetQamarks").Value;
-            using (var connection = new SqlConnection(_innovaConnectionString))
+            using(var connection = new SqlConnection(_innovaConnectionString))
             {
-                if (connection == null) return Enumerable.Empty<QamarkDTO>();
+                if(connection == null) return Enumerable.Empty<QamarkDTO>();
                 try
                 {
                     connection.Open();
                     var qamarks = await connection.QueryAsync<QamarkDTO>(query, commandType: CommandType.Text);
                     return qamarks;
 
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error al ejecutar la consulta: " + ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-        }
-
-        [HttpGet("InsertarDatosDWAsync")]
-        public async Task InsertarDatosDWAsync()
-        {
-            var query = _configuration.GetSection("ReporteCuota:InsertarDatosEnDW").Value;
-            using (var connection = new SqlConnection(_innovaConnectionString))
-            {
-                if (connection == null) return;
-                try
-                {
-                    connection.Open();
-                    await connection.QueryAsync<QamarkDTO>(query, commandType: CommandType.Text);
                 }
                 catch (Exception ex)
                 {
