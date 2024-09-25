@@ -14,12 +14,14 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
     public class ListaDeCajasServicio : IListaDeCajas
     {
         private readonly string _connectionString;
+        private readonly string _connectionStringHp;
         private readonly IConfiguration _configuration;
 
         public ListaDeCajasServicio(IConfiguration configuration)
         {
             _configuration = configuration;
             _connectionString = configuration.GetConnectionString("SqlTestConection");
+            _connectionStringHp = configuration.GetConnectionString("HpProduccion");
         }
 
         public async Task<List<ListaDeCajas>> BuscarListaDeLecturas(string id)
@@ -130,7 +132,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
+                using (SqlConnection connection = new SqlConnection(_connectionStringHp))
                 {
                     connection.Open();
 
@@ -138,8 +140,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
 
                     using (SqlCommand command = new SqlCommand(sqlLecturas, connection))
                     {
-                        //Agrego el parametro de la consulta
-                        //command.Parameters.AddWithValue("@cajaBuscada", id);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

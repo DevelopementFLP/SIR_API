@@ -12,11 +12,11 @@ namespace SistemaIntegralReportes.Models.Reportes
         private double _pesoInnova = 0;
         private double _pesoLocal = 0;
         private double _porsentajeDeMerma = 0;
-        private decimal _porsentajePorMenudencia = 0;
-        private Int32 _seccionDelDia = 0;
+        private decimal _porsentajePorMenudencia = 0;        
         private string _etiqueta = string.Empty;
         private string _tropa = string.Empty;
         private string _proveedor = string.Empty;
+        private Int32 _seccionDelDia = 0;
 
 
         public string FechaDeBalanza
@@ -59,13 +59,7 @@ namespace SistemaIntegralReportes.Models.Reportes
         {
             get { return _pesoLocal; }
             set { _pesoLocal = value; }
-        }
-
-        public Int32 SeccionDelDia
-        {
-            get { return _seccionDelDia; }
-            set { _seccionDelDia = value; }
-        }
+        }   
 
         public double PorsentajeDeMerma
         {
@@ -97,6 +91,10 @@ namespace SistemaIntegralReportes.Models.Reportes
             set { _proveedor = value; }
         }
 
-        public MermaPorPeso() { }
+        public Int32 SeccionDelDia
+        {
+            get { return _seccionDelDia; }
+            set { _seccionDelDia = value; }
+        }
     }
 }
