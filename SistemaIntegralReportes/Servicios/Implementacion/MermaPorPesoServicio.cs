@@ -20,6 +20,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
         {
             List<MermaPorPeso> miListaDeMermasPorFecha= new List<MermaPorPeso>();
             Int32 ParteDelDia = 1;
+            //
 
             try
             {
