@@ -89,7 +89,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
                         seccion.SeccionDelDia = 2; 
                     }
 
-
                     if (seccion.PesoInnova > seccion.PesoLocal)
                     {
                         seccion.PorsentajeDeMerma = Math.Round(((seccion.PesoInnova - seccion.PesoLocal) / seccion.PesoInnova) * 100, 2);
