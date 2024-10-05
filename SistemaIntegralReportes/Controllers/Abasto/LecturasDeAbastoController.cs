@@ -60,14 +60,14 @@ namespace SistemaIntegralReportes.Controllers.Abasto
         }
 
         [HttpGet("listadoDeAbasto")]
-        public async Task<IActionResult> ListarLecturasVistaAbasto(DateTime fechaDelDia)
+        public async Task<IActionResult> ListarStockAbasto()
         {
             var response = new ResponseDto<List<ListaDeLecturasAbasto>>();
 
             try
             {
                 response.EsCorrecto = true;
-                response.Resultado = await _lecturaDeMedia.ListarLecturasVistaAbasto(fechaDelDia);
+                response.Resultado = await _lecturaDeMedia.ListarStockAbasto();
 
             }
             catch (Exception ex)
