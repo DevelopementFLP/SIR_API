@@ -12,5 +12,7 @@ namespace SistemaIntegralReportes.Servicios.Contrato.Abasto
         Task<List<ListaDeLecturasAbasto>> ListarStockAbasto();
 
         Task<LecturaDeAbastoDTO> GetCodigoQrFiltrado(string codigoQr);
+
+        Task<bool> DeleteLecturaDeAbasto(string idAnimal);
     }
 }

@@ -96,5 +96,31 @@ namespace SistemaIntegralReportes.Controllers.Abasto
             }
             return Ok(response);
         }
+
+        // Método para eliminar una lectura de abasto
+        [HttpDelete("eliminarLectura")]
+        public async Task<IActionResult> DeleteLecturaDeAbasto(string idAnimal)
+        {
+            var response = new ResponseDto<bool>();
+
+            try
+            {
+                response.EsCorrecto = await _lecturaDeMedia.DeleteLecturaDeAbasto(idAnimal);
+                if (response.EsCorrecto)
+                {
+                    response.Mensaje = "Lectura eliminada exitosamente.";
+                }
+                else
+                {
+                    response.Mensaje = "No se pudo eliminar la lectura.";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+            return Ok(response);
+        }
     }
 }
