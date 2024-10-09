@@ -107,18 +107,22 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                 string idAnimal = reader.GetString(2);
                                 string secuencial = reader.GetString(3);
                                 string operacion = reader.GetString(4);
-                                string usuarioLogueado = reader.GetString(7);    
+
+                                string usuarioLogueado = reader.GetString(7);
+
                                 string fechaDeRegistroString = fechaDeRegistro.ToString("dd-MM-yyyy HH:mm:ss");
 
 
                                 LecturaDeAbastoDTO lecturas = new LecturaDeAbastoDTO
                                 {
-                                    FechaDeRegistro= fechaDeRegistro,
+                                    FechaDeRegistro = fechaDeRegistro,
                                     LecturaDeMedia = lecturaDeMedia,
                                     IdAnimal = idAnimal,
                                     Secuencial = secuencial,
                                     Operacion = operacion,
-                                    UsuarioLogueado= usuarioLogueado,
+
+                                    UsuarioLogueado = usuarioLogueado,
+
                                     FechaDeRegistroString = fechaDeRegistroString
 
                                 };
@@ -137,19 +141,19 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             }
         }
 
-        public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado , DateTime? fechaDeFaena = null, decimal? peso = null )
+        public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado, DateTime? fechaDeFaena = null, decimal? peso = null)
         {
             LecturaDeAbastoDTO lecturaDeMediaInsert = new LecturaDeAbastoDTO();
             string parseoDeLectura = "";
             string parseoSecuencial = "";
-            
-               
-            if (lecturaDeMedia == null) 
+
+
+            if (lecturaDeMedia == null)
             {
                 throw new Exception("Datos inválidos proporcionados.");
             }
-            
-            if(fechaDeFaena == null || peso == null)
+
+            if (fechaDeFaena == null || peso == null)
             {
                 fechaDeFaena = DateTime.Now.Date;
                 peso = 0;
@@ -169,8 +173,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                         command.Parameters.AddWithValue("@operacion", operacion);
 
                         parseoDeLectura = lecturaDeMedia.Substring(22, 13);
-                        command.Parameters.AddWithValue("@idAnimal", parseoDeLectura);                   
-                        
+                        command.Parameters.AddWithValue("@idAnimal", parseoDeLectura);
+
                         parseoSecuencial = lecturaDeMedia.Substring(30, 4);
                         command.Parameters.AddWithValue("@secuencial", parseoSecuencial);
 
@@ -226,10 +230,10 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                 string proveedor = reader.GetString(4);
                                 float peso = reader.GetFloat(5);
                                 DateTime fechaFaena = reader.GetDateTime(6);
-                                string clasificacion = reader.GetString(7);                               
+                                string clasificacion = reader.GetString(7);
                                 string secuencial = reader.GetString(8);
                                 string operacion = reader.GetString(9);
-                                
+
 
 
                                 ListaDeLecturasAbasto lecturas = new ListaDeLecturasAbasto
@@ -243,7 +247,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     FechaDeFaena = fechaFaena.ToString("yyyy-MM-dd"),
                                     Clasificacion = clasificacion,
                                     Secuencial = secuencial,
-                                    Operacion = operacion                                    
+                                    Operacion = operacion
                                 };
 
                                 _listaDeLecturas.Add(lecturas);
