@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 using AutoMapper;
-using SistemaIntegralreportes.DTO;
 using SistemaIntegralReportes.Models.Dispositivos;
 using SistemaIntegralReportes.DTO.Abasto;
+using SistemaIntegralReportes.DTO.Dispositivos;
 
 namespace SistemaIntegralReportes.Repositorio.Automapper
 {

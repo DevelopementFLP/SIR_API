@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaIntegralreportes.DTO;
-using SistemaIntegralReportes.Servicios.Contrato;
+using SistemaIntegralReportes.DTO.Dispositivos;
+using SistemaIntegralReportes.Servicios.Contrato.Dispositivos;
 
 namespace SistemaIntegralReportes.Controllers.Dispositivos
 {
