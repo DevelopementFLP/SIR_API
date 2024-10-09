@@ -7,10 +7,12 @@ namespace SistemaIntegralReportes.Servicios.Contrato.Abasto
     {
         Task<List<LecturaDeAbastoDTO>> GetLecturaDeAbasto();
 
-        Task<LecturaDeAbastoDTO> InsertarLectura(string lectura, string operacion, string usuarioLogueado , DateTime? fechaDeFaena , decimal? peso);
+        Task<LecturaDeAbastoDTO> InsertarLectura(string lectura, string operacion, string usuarioLogueado, DateTime? fechaDeFaena, decimal? peso);
 
-        Task<List<ListaDeLecturasAbasto>> ListarLecturasVistaAbasto(DateTime fechaDelDia);
+        Task<List<ListaDeLecturasAbasto>> ListarStockAbasto();
 
         Task<LecturaDeAbastoDTO> GetCodigoQrFiltrado(string codigoQr);
+
+        Task<bool> DeleteLecturaDeAbasto(string idAnimal);
     }
 }
