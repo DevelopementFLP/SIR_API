@@ -1,6 +1,6 @@
-﻿namespace SistemaIntegralReportes.DTO.Cuota
+﻿namespace SistemaIntegralReportes.DTO.Rendimiento
 {
-    public class ConfTipoCuotaDTO
+    public class ConfTipoRendimiento
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
@@ -8,4 +8,3 @@
         public bool Activo { get; set; }
     }
 }
-
