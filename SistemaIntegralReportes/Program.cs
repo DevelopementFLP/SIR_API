@@ -19,6 +19,9 @@ using SistemaIntegralReportes.Servicios.Implementacion.Cajas;
 using SistemaIntegralReportes.Servicios.Contrato.Faena;
 using SistemaIntegralReportes.Servicios.Implementacion.Faena;
 
+using SistemaIntegralReportes.Servicios.Contrato.Dispositivos;
+using SistemaIntegralReportes.Servicios.Contrato.FichaTecnica;
+using SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -102,6 +105,19 @@ builder.Services.AddScoped<ILecturaDeAbasto, LecturaDeAbastoServicio>();
 builder.Services.AddScoped<IConfiguracionAbasto, ConfiguracionSeccionAbasto>();
 builder.Services.AddScoped<IIdentificacionDeCajas, IdentificacionDeCajasService>();
 builder.Services.AddScoped<IReporteDeFaena, ReporteDeMediasServicio>();
+
+builder.Services.AddScoped<IFtMarcas, FtMarcaService>();
+builder.Services.AddScoped<IFtCondicionAlmacenamiento, FtCondicionAlmacenamientoService>();
+builder.Services.AddScoped<IFtColor, FtColorService>();
+builder.Services.AddScoped<IFtTipoDeUso, FtTipoDeUsoService>();
+builder.Services.AddScoped<IFtOlor, FtOlorService>();
+builder.Services.AddScoped<IFtPh, FtPhService>();
+builder.Services.AddScoped<IFtAlergenos, FtAlergenosService>();
+builder.Services.AddScoped<IFtVidaUtil, FtVidaUtilService>();
+builder.Services.AddScoped<IFtTipoDeAlimentacion, FtTipoDeAlimentacionService>();
+builder.Services.AddScoped<IFtTipoDeEnvase, FtTipoDeEnvaseService>();
+builder.Services.AddScoped<IFtPresentacionDeEnvase, FtPresentacionDeEnvaseService>();
+
 
 builder.Services.AddControllers();
 
