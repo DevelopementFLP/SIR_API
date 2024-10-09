@@ -1,6 +1,6 @@
-﻿using SistemaIntegralreportes.DTO;
+﻿using SistemaIntegralReportes.DTO.Dispositivos;
 
-namespace SistemaIntegralReportes.Servicios.Contrato
+namespace SistemaIntegralReportes.Servicios.Contrato.Dispositivos
 {
     public interface IUbicacionesDispositivo
     {

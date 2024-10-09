@@ -1,8 +1,8 @@
-﻿using SistemaIntegralreportes.DTO;
+﻿using SistemaIntegralReportes.DTO.Dispositivos;
 using SistemaIntegralReportes.Models.Dispositivos;
 using System.Linq.Expressions;
 
-namespace SistemaIntegralReportes.Servicios.Contrato
+namespace SistemaIntegralReportes.Servicios.Contrato.Dispositivos
 {
     public interface IDispositivo
     {

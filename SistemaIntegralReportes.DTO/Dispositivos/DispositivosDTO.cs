@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaIntegralreportes.DTO
+namespace SistemaIntegralReportes.DTO.Dispositivos
 {
     public class DispositivosDTO
     {
