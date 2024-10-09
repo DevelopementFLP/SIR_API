@@ -59,7 +59,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     FechaDeRegistro = fechaDeRegistro,
                                     LecturaDeMedia = lecturaDeMedia,
                                     IdAnimal = idAnimal,
-                                    Secuencial = secuencial,
+                                     Secuencial = secuencial,
                                     Operacion = operacion,
                                     UsuarioLogueado = usuarioLogueado
                                 };
@@ -81,8 +81,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
 
             List<LecturaDeAbastoDTO> _listaDeLecturas = new List<LecturaDeAbastoDTO>();
 
-            string fechaDelDia = DateTime.Now.ToString("yyyyMMdd" + " 23:59:59.000");
-
+            string fechaHoraDesde = DateTime.Now.ToString("yyyyMMdd" + " 00:00:00.000");
+            string fechaHoraHasta = DateTime.Now.ToString("yyyyMMdd" + " 23:59:59.000");
 
             try
             {
@@ -95,7 +95,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                     using (SqlCommand command = new SqlCommand(sqlLecturaDeAbasto, connection))
                     {
                         //Agrego el parametro de la consulta
-                        command.Parameters.AddWithValue("@fechaDelDia", fechaDelDia);
+                        command.Parameters.AddWithValue("@fechaHoraDesde", fechaHoraDesde);
+                        command.Parameters.AddWithValue("@fechaHoraHasta", fechaHoraHasta);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -106,7 +107,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                 string idAnimal = reader.GetString(2);
                                 string secuencial = reader.GetString(3);
                                 string operacion = reader.GetString(4);
-                                string usuarioLogueado = reader.GetString(7);                                
+                                string usuarioLogueado = reader.GetString(7);    
+                                string fechaDeRegistroString = fechaDeRegistro.ToString("dd-MM-yyyy HH:mm:ss");
 
 
                                 LecturaDeAbastoDTO lecturas = new LecturaDeAbastoDTO
@@ -116,7 +118,9 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     IdAnimal = idAnimal,
                                     Secuencial = secuencial,
                                     Operacion = operacion,
-                                    UsuarioLogueado= usuarioLogueado
+                                    UsuarioLogueado= usuarioLogueado,
+                                    FechaDeRegistroString = fechaDeRegistroString
+
                                 };
 
                                 _listaDeLecturas.Add(lecturas);
@@ -196,7 +200,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
         }
 
 
-        public async Task<List<ListaDeLecturasAbasto>> ListarLecturasVistaAbasto(DateTime fechaDelDia)
+        public async Task<List<ListaDeLecturasAbasto>> ListarStockAbasto()
         {
             List<ListaDeLecturasAbasto> _listaDeLecturas = new List<ListaDeLecturasAbasto>();
 
@@ -206,12 +210,10 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                 {
                     await connection.OpenAsync();
 
-                    string sqlLecturaDeAbasto = _configuration.GetSection("SeccionAbasto:ListarLecturasDeAbasto").Value.ToString();
+                    string sqlLecturaDeAbasto = _configuration.GetSection("SeccionAbasto:LecturasDeStockAbasto").Value.ToString();
 
                     using (SqlCommand command = new SqlCommand(sqlLecturaDeAbasto, connection))
                     {
-                        //Agrego el parametro de la consulta
-                        command.Parameters.AddWithValue("@fechaDelDia", fechaDelDia);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -250,7 +252,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                     }
                     connection.Close();
                 }
-                return _listaDeLecturas.OrderBy(a => a.FechaDeRegistro).ToList();
+                return _listaDeLecturas.OrderByDescending(a => a.FechaDeRegistro).ToList();
             }
             catch (Exception ex)
             {
@@ -258,6 +260,36 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             }
         }
 
-       
+
+        public async Task<bool> DeleteLecturaDeAbasto(string idAnimal)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Consulta SQL para eliminar la lectura de abasto
+                    string sqlDeleteLectura = _configuration.GetSection("SeccionAbasto:EliminarLecturaDeAbasto").Value.ToString();
+
+                    using (SqlCommand command = new SqlCommand(sqlDeleteLectura, connection))
+                    {
+                        // Agregamos el parámetro
+                        command.Parameters.Add("@IdAnimal", SqlDbType.NVarChar).Value = idAnimal;
+
+                        // Ejecutamos el comando
+                        int rowsAffected = await command.ExecuteNonQueryAsync();
+
+                        // Retornamos true si se eliminó al menos una fila, false de lo contrario
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                throw new Exception("Error al eliminar la lectura de abasto: " + ex.Message);
+            }
+        }
     }
 }

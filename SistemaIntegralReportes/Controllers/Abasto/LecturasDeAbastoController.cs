@@ -60,14 +60,14 @@ namespace SistemaIntegralReportes.Controllers.Abasto
         }
 
         [HttpGet("listadoDeAbasto")]
-        public async Task<IActionResult> ListarLecturasVistaAbasto(DateTime fechaDelDia)
+        public async Task<IActionResult> ListarStockAbasto()
         {
             var response = new ResponseDto<List<ListaDeLecturasAbasto>>();
 
             try
             {
                 response.EsCorrecto = true;
-                response.Resultado = await _lecturaDeMedia.ListarLecturasVistaAbasto(fechaDelDia);
+                response.Resultado = await _lecturaDeMedia.ListarStockAbasto();
 
             }
             catch (Exception ex)
@@ -88,6 +88,32 @@ namespace SistemaIntegralReportes.Controllers.Abasto
                 response.EsCorrecto = true;
                 response.Resultado = await _lecturaDeMedia.GetCodigoQrFiltrado(codigoQr);
 
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+            return Ok(response);
+        }
+
+        // Método para eliminar una lectura de abasto
+        [HttpDelete("eliminarLectura")]
+        public async Task<IActionResult> DeleteLecturaDeAbasto(string idAnimal)
+        {
+            var response = new ResponseDto<bool>();
+
+            try
+            {
+                response.EsCorrecto = await _lecturaDeMedia.DeleteLecturaDeAbasto(idAnimal);
+                if (response.EsCorrecto)
+                {
+                    response.Mensaje = "Lectura eliminada exitosamente.";
+                }
+                else
+                {
+                    response.Mensaje = "No se pudo eliminar la lectura.";
+                }
             }
             catch (Exception ex)
             {
