@@ -37,7 +37,7 @@ namespace SistemaIntegralReportes.Controllers.Abasto
                 response.Mensaje = ex.Message;
             }
             return Ok(response);
-        }        
+        }
 
 
         [HttpGet("insertarLecturaDeMedia")]
@@ -48,7 +48,7 @@ namespace SistemaIntegralReportes.Controllers.Abasto
             try
             {
                 response.EsCorrecto = true;
-                response.Resultado = await _lecturaDeMedia.InsertarLectura(lecturaDeAbasto, operacion, usuarioLogueado ,fechaDeFaena, peso);
+                response.Resultado = await _lecturaDeMedia.InsertarLectura(lecturaDeAbasto, operacion, usuarioLogueado, fechaDeFaena, peso);
 
             }
             catch (Exception ex)
