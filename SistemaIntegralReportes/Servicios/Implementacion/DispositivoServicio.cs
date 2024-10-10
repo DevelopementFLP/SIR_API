@@ -1,13 +1,10 @@
-﻿using Microsoft.Data.SqlClient;
+﻿
 using Microsoft.EntityFrameworkCore;
-using NuGet.DependencyResolver;
-using SistemaIntegralReportes.Models.Dispositivos;
-using SistemaIntegralReportes.Models.StockCajas;
-
 using SistemaIntegralReportes.Repositorio.Contrato;
-using SistemaIntegralreportes.DTO;
-using SistemaIntegralReportes.Servicios.Contrato;
 using AutoMapper;
+using SistemaIntegralReportes.DTO.Dispositivos;
+using SistemaIntegralReportes.Models.Dispositivos;
+using SistemaIntegralReportes.Servicios.Contrato.Dispositivos;
 
 namespace SistemaIntegralReportes.Servicios.Implementacion
 {
@@ -66,47 +63,12 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
                 else
                 {
                     throw new TaskCanceledException("No se econtraron coincidencias");
-                }                                                        
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
-            //List<Dispositivos> dispositivos = new List<Dispositivos>();
-
-            //using (SqlConnection connection = new SqlConnection(_connectionString))
-            //{
-            //    await connection.OpenAsync();
-
-            //    var queryExecute = _configuration.GetSection("Dispositivos:GetDispositivos").Value.ToString();
-
-            //    using (SqlCommand command = new SqlCommand(queryExecute, connection))
-            //    {
-            //        command.Parameters.AddWithValue("@idDispositivo", id);
-
-            //        using (SqlDataReader reader = await command.ExecuteReaderAsync())
-            //        {
-            //            while (await reader.ReadAsync())
-            //            {
-            //                Dispositivos dispositivo = new Dispositivos
-            //                {
-            //                    _idDispositivo = reader.GetInt32(0),
-            //                    _nombreDeDispositivo = reader.GetString(1),
-            //                    _ipDispositivo = reader.GetString(2),
-            //                    _puertoDispositivo = reader.GetInt32(3),
-            //                    _descripcionDispositivo = reader.GetString(4),
-            //                    _estadoDispositivo = reader.GetBoolean(5),
-            //                    _idUbicacionDispositivo = reader.GetInt32(6),
-            //                    _idFormatoDispositivo = reader.GetInt32(7)
-            //                };
-
-            //                dispositivos.Add(dispositivo);
-            //            }
-            //        }
-            //    }
-            //}
-            //return dispositivos;
         }
 
         public async Task<DispositivosDTO> Crear(DispositivosDTO modelo)
@@ -126,37 +88,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
             {
                 throw ex;
             }
-
-            //try
-            //{
-            //    using (SqlConnection connection = new SqlConnection(_connectionString))
-            //    {
-            //        await connection.OpenAsync();
-
-            //        var queryExecute = _configuration.GetSection("Dispositivos:CreateDispositivos").Value;
-
-            //        using (SqlCommand command = new SqlCommand(queryExecute, connection))
-            //        {
-            //            command.Parameters.AddWithValue("@nombreDeDispositivo", modelo._nombreDeDispositivo);
-            //            command.Parameters.AddWithValue("@ipDispositivo", modelo._ipDispositivo);
-            //            command.Parameters.AddWithValue("@puertoDispositivo", modelo._puertoDispositivo);
-            //            command.Parameters.AddWithValue("@descripcionDispositivo", modelo._descripcionDispositivo);
-            //            command.Parameters.AddWithValue("@estadoDispositivo", modelo._estadoDispositivo);
-            //            command.Parameters.AddWithValue("@idTipoDispositivo", modelo._idTipoDispositivo);
-            //            command.Parameters.AddWithValue("@idUbicacionDispositivo", modelo._idUbicacionDispositivo);
-            //            command.Parameters.AddWithValue("@idFormatoDispositivo", modelo._idFormatoDispositivo);
-
-            //            // Ejecutar el INSERT usando ExecuteNonQueryAsync
-            //            await command.ExecuteNonQueryAsync();
-
-            //            return modelo;
-            //        }
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
         }
 
         public async Task<bool> Editar(DispositivosDTO modelo)
@@ -195,38 +126,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion
             {
                 throw ex;
             }
-            //try
-            //{
-            //    using (SqlConnection connection = new SqlConnection(_connectionString))
-            //    {
-            //        await connection.OpenAsync();
-
-            //        var updateQuery = _configuration.GetSection("Dispositivos:UpdateDispositivo").Value;
-
-            //        using (SqlCommand command = new SqlCommand(updateQuery, connection))
-            //        {
-            //            command.Parameters.AddWithValue("@idDispositivo", modelo._idDispositivo);
-            //            command.Parameters.AddWithValue("@nombreDeDispositivo", modelo._nombreDeDispositivo);
-            //            command.Parameters.AddWithValue("@ipDispositivo", modelo._ipDispositivo);
-            //            command.Parameters.AddWithValue("@puertoDispositivo", modelo._puertoDispositivo);
-            //            command.Parameters.AddWithValue("@descripcionDispositivo", modelo._descripcionDispositivo);
-            //            command.Parameters.AddWithValue("@estadoDispositivo", modelo._estadoDispositivo);
-            //            command.Parameters.AddWithValue("@idTipoDispositivo", modelo._idTipoDispositivo);
-            //            command.Parameters.AddWithValue("@idUbicacionDispositivo", modelo._idUbicacionDispositivo);
-            //            command.Parameters.AddWithValue("@idFormatoDispositivo", modelo._idFormatoDispositivo);
-
-            //            // Ejecutar el UPDATE 
-            //            int rowsAffected = await command.ExecuteNonQueryAsync();
-
-            //            return true;
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine($"Error al actualizar dispositivo: {ex.Message}");
-            //    throw;
-            //}
         }
 
         public async Task<bool> Eliminar(int id)

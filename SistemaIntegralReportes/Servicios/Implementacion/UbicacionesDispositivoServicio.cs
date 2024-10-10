@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using SistemaIntegralreportes.DTO;
+using SistemaIntegralReportes.DTO.Dispositivos;
 using SistemaIntegralReportes.Models.Dispositivos;
 using SistemaIntegralReportes.Repositorio.Contrato;
-using SistemaIntegralReportes.Servicios.Contrato;
+using SistemaIntegralReportes.Servicios.Contrato.Dispositivos;
 
 namespace SistemaIntegralReportes.Servicios.Implementacion
 {

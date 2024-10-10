@@ -41,6 +41,10 @@
     <ProjectReference Include="..\SistemaIntegralReportes.DTO\SistemaIntegralReportes.DTO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Servicios\Implementacion\Dispositivos\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

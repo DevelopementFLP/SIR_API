@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaIntegralreportes.DTO
+namespace SistemaIntegralReportes.DTO.Dispositivos
 {
-    public class UbicacionesDispositivosDTO
+    public class TipoDispositivoDTO
     {
-        public int IdUbicacion { get; set; }
+        public int IdTipo { get; set; }
         public string Nombre { get; set; } = null!;
-        public string? Descripcion { get; set; }
-        public bool Activo { get; set; }
+        public string? ComandoInicio { get; set; }
+        public string? ComandoFin { get; set; }
     }
 }

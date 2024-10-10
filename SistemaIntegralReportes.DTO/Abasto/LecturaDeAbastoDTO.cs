@@ -16,6 +16,7 @@ namespace SistemaIntegralReportes.DTO.Abasto
         private decimal? _peso = 0;
         private DateTime? _fechaDeFaena;
         private string _usuarioLogueado;
+        private string _fechaDeRegstrosString = string.Empty;
 
 
 
@@ -65,6 +66,12 @@ namespace SistemaIntegralReportes.DTO.Abasto
         {
             get { return _usuarioLogueado; }
             set { _usuarioLogueado = value; }
+        }
+
+        public string FechaDeRegistroString
+        {
+            get { return _fechaDeRegstrosString; }
+            set { _fechaDeRegstrosString = value; }
         }
     }
 }

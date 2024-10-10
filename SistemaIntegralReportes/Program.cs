@@ -14,6 +14,14 @@ using SistemaIntegralReportes.PruebaDeRepositorio.Implementacion;
 using SistemaIntegralReportes.Repositorio.Contrato;
 using SistemaIntegralReportes.Servicios.Contrato.Abasto;
 using SistemaIntegralReportes.Servicios.Implementacion.Abasto;
+using SistemaIntegralReportes.Servicios.Contrato.Cajas;
+using SistemaIntegralReportes.Servicios.Implementacion.Cajas;
+using SistemaIntegralReportes.Servicios.Contrato.Faena;
+using SistemaIntegralReportes.Servicios.Implementacion.Faena;
+
+using SistemaIntegralReportes.Servicios.Contrato.Dispositivos;
+using SistemaIntegralReportes.Servicios.Contrato.FichaTecnica;
+using SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +33,8 @@ builder.Services.AddCors(p => p.AddPolicy(name: misOrigenes, bldr =>
     bldr.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
 }
 ));
+
+
 
 builder.Services.AddDbContext<PerfilesDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PerfilesDbContext") ?? throw new InvalidOperationException("Connection string 'PerfilesDbContext' not found.")));
@@ -93,6 +103,20 @@ builder.Services.AddScoped<IListaDeCajas, ListaDeCajasServicio>();
 builder.Services.AddScoped<IMermaPorPeso, MermaPorPesoServicio>();
 builder.Services.AddScoped<ILecturaDeAbasto, LecturaDeAbastoServicio>();
 builder.Services.AddScoped<IConfiguracionAbasto, ConfiguracionSeccionAbasto>();
+builder.Services.AddScoped<IIdentificacionDeCajas, IdentificacionDeCajasService>();
+builder.Services.AddScoped<IReporteDeFaena, ReporteDeMediasServicio>();
+
+builder.Services.AddScoped<IFtMarcas, FtMarcaService>();
+builder.Services.AddScoped<IFtCondicionAlmacenamiento, FtCondicionAlmacenamientoService>();
+builder.Services.AddScoped<IFtColor, FtColorService>();
+builder.Services.AddScoped<IFtTipoDeUso, FtTipoDeUsoService>();
+builder.Services.AddScoped<IFtOlor, FtOlorService>();
+builder.Services.AddScoped<IFtPh, FtPhService>();
+builder.Services.AddScoped<IFtAlergenos, FtAlergenosService>();
+builder.Services.AddScoped<IFtVidaUtil, FtVidaUtilService>();
+builder.Services.AddScoped<IFtTipoDeAlimentacion, FtTipoDeAlimentacionService>();
+builder.Services.AddScoped<IFtTipoDeEnvase, FtTipoDeEnvaseService>();
+builder.Services.AddScoped<IFtPresentacionDeEnvase, FtPresentacionDeEnvaseService>();
 
 
 builder.Services.AddControllers();
@@ -118,9 +142,9 @@ app.UseHttpsRedirection();
 //app.UseStaticFiles();
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.UseCors(misOrigenes);
+
+app.UseAuthorization();
 
 app.MapControllers();
 
