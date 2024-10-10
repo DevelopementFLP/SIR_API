@@ -59,7 +59,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     FechaDeRegistro = fechaDeRegistro,
                                     LecturaDeMedia = lecturaDeMedia,
                                     IdAnimal = idAnimal,
-                                     Secuencial = secuencial,
+                                    Secuencial = secuencial,
                                     Operacion = operacion,
                                     UsuarioLogueado = usuarioLogueado
                                 };
@@ -107,9 +107,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                 string idAnimal = reader.GetString(2);
                                 string secuencial = reader.GetString(3);
                                 string operacion = reader.GetString(4);
-
                                 string usuarioLogueado = reader.GetString(7);
-
                                 string fechaDeRegistroString = fechaDeRegistro.ToString("dd-MM-yyyy HH:mm:ss");
 
 
@@ -120,9 +118,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                     IdAnimal = idAnimal,
                                     Secuencial = secuencial,
                                     Operacion = operacion,
-
                                     UsuarioLogueado = usuarioLogueado,
-
                                     FechaDeRegistroString = fechaDeRegistroString
 
                                 };
