@@ -24,6 +24,7 @@ namespace SistemaIntegralReportes.DTO.Cajas
         private float _tara = 0;
         private string _fechaFaenaCorte = string.Empty;
         private string _fechaFaenaCaja = string.Empty;
+        private string _nombreDeProducto = string.Empty;
 
 
         public Int32 Id
@@ -119,6 +120,12 @@ namespace SistemaIntegralReportes.DTO.Cajas
         {
             get { return _fechaFaenaCaja; }
             set { _fechaFaenaCaja = value; }
+        }
+
+        public string NombreDeProducto
+        {
+            get { return _nombreDeProducto; }
+            set { _nombreDeProducto = value; }
         }
 
     }

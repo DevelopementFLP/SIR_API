@@ -58,6 +58,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Cajas
                                 float tara = reader.GetFloat(reader.GetOrdinal("TARA"));
                                 string fechaFaenaCorte = reader.GetString(reader.GetOrdinal("FECHA_FAENA_CORTE"));
                                 string fechaFaenaCaja = reader.GetString(reader.GetOrdinal("FECHA_FAENA_CAJA"));
+                                string nombreDeProducto = reader.GetString(reader.GetOrdinal("NOMBRE_DE_PRODUCTO"));
 
 
                                 string stringEstado = "";
@@ -131,7 +132,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Cajas
                                     Peso = peso,
                                     Tara = tara,
                                     FechaFaenaCorte = fechaFaenaCorte,
-                                    FechaFaenaCaja =  fechaFaenaCaja
+                                    FechaFaenaCaja =  fechaFaenaCaja,
+                                    NombreDeProducto = nombreDeProducto,
                                 };
                             }
                         }

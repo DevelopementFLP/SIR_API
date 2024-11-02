@@ -8,7 +8,7 @@ namespace SistemaIntegralReportes.DTO.FichaTecnica
 {
     public class AlergenosDTO
     {
-        public int IdAlergenos { get; set; }
+        public int IdAlergeno { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
     }

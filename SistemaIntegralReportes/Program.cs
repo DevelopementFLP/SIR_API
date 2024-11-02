@@ -22,6 +22,8 @@ using SistemaIntegralReportes.Servicios.Implementacion.Faena;
 using SistemaIntegralReportes.Servicios.Contrato.Dispositivos;
 using SistemaIntegralReportes.Servicios.Contrato.FichaTecnica;
 using SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica;
+using SistemaIntegralReportes.Servicios.Contrato.FichaTecnica.ConsultaDePlantillas;
+using SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica.ConsultaDePlantillas;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -106,11 +108,14 @@ builder.Services.AddScoped<IConfiguracionAbasto, ConfiguracionSeccionAbasto>();
 builder.Services.AddScoped<IIdentificacionDeCajas, IdentificacionDeCajasService>();
 builder.Services.AddScoped<IReporteDeFaena, ReporteDeMediasServicio>();
 
+builder.Services.AddScoped<IFtProductos, FtProductosService>();
 builder.Services.AddScoped<IFtMarcas, FtMarcaService>();
+builder.Services.AddScoped<IFtDestino, FtDestinoService>();
 builder.Services.AddScoped<IFtCondicionAlmacenamiento, FtCondicionAlmacenamientoService>();
 builder.Services.AddScoped<IFtColor, FtColorService>();
 builder.Services.AddScoped<IFtTipoDeUso, FtTipoDeUsoService>();
 builder.Services.AddScoped<IFtOlor, FtOlorService>();
+builder.Services.AddScoped<IFtIdioma, FtIdiomaService>();
 builder.Services.AddScoped<IFtPh, FtPhService>();
 builder.Services.AddScoped<IFtAlergenos, FtAlergenosService>();
 builder.Services.AddScoped<IFtVidaUtil, FtVidaUtilService>();
@@ -118,6 +123,15 @@ builder.Services.AddScoped<IFtTipoDeAlimentacion, FtTipoDeAlimentacionService>()
 builder.Services.AddScoped<IFtTipoDeEnvase, FtTipoDeEnvaseService>();
 builder.Services.AddScoped<IFtPresentacionDeEnvase, FtPresentacionDeEnvaseService>();
 
+//Plantillas
+builder.Services.AddScoped<IFtAspectosGeneralesPlantilla, FtAspectosGeneralesService>();
+builder.Services.AddScoped<IFtEspecificacionesPlantilla, FtEspecificacionesService>();
+builder.Services.AddScoped<IFtResponseAspectosGeneralesPlantilla, FtResponseAspectosGeneralesService>();
+builder.Services.AddScoped<IFtResponseEspecificacionesPlantilla, FtResponseEspecificacionesService>();
+builder.Services.AddScoped<IFtImagenPlantilla, FtImagenService>();
+
+// Crear Ficha Tecnica
+builder.Services.AddScoped<IFtFichaTecnica, FtFichaTecnicaService>();
 
 builder.Services.AddControllers();
 

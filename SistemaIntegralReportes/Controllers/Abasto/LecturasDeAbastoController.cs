@@ -41,7 +41,7 @@ namespace SistemaIntegralReportes.Controllers.Abasto
 
 
         [HttpGet("insertarLecturaDeMedia")]
-        public async Task<IActionResult> InsertarLecturaDeAbasto(string lecturaDeAbasto, string operacion, string usuarioLogueado, DateTime? fechaDeFaena, decimal? peso)
+        public async Task<IActionResult> InsertarLecturaDeAbasto(string lecturaDeAbasto, string operacion, string usuarioLogueado, DateTime? fechaDeFaena)
         {
             var response = new ResponseDto<LecturaDeAbastoDTO>();
 
@@ -59,7 +59,7 @@ namespace SistemaIntegralReportes.Controllers.Abasto
             return Ok(response);
         }
 
-        [HttpGet("listadoDeAbasto")]
+        [HttpGet("listadoStockDeAbasto")]
         public async Task<IActionResult> ListarStockAbasto()
         {
             var response = new ResponseDto<List<ListaDeLecturasAbasto>>();

@@ -1,24 +1,24 @@
 ﻿using Microsoft.Data.SqlClient;
-using SistemaIntegralReportes.DTO.FichaTecnica;
+using SistemaIntegralReportes.DTO.FichaTecnica; // Asegúrate de que este DTO esté definido
 using SistemaIntegralReportes.Servicios.Contrato.FichaTecnica;
 using Microsoft.Extensions.Configuration;
 
 namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
 {
-    public class FtAlergenosService : IFtAlergenos
+    public class FtDestinoService : IFtDestino // Asegúrate de que IFtDestino esté definido
     {
         private readonly string _connectionString;
         private readonly IConfiguration _configuration;
 
-        public FtAlergenosService(IConfiguration configuration)
+        public FtDestinoService(IConfiguration configuration)
         {
             _configuration = configuration;
             _connectionString = configuration.GetConnectionString("SqlTestConection");
         }
 
-        public async Task<List<AlergenosDTO>> Lista()
+        public async Task<List<DestinoDTO>> Lista() 
         {
-            List<AlergenosDTO> listaAlergenos = new List<AlergenosDTO>();
+            List<DestinoDTO> listaDestinos = new List<DestinoDTO>();
 
             try
             {
@@ -26,7 +26,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 {
                     await connection.OpenAsync();
 
-                    string sqlListar = _configuration.GetSection("FichaTecnica:FtListarAlergenos").Value.ToString();
+                    string sqlListar = _configuration.GetSection("FichaTecnica:FtListarDestinos").Value.ToString();
 
                     using (SqlCommand command = new SqlCommand(sqlListar, connection))
                     {
@@ -34,9 +34,9 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                         {
                             while (await reader.ReadAsync())
                             {
-                                listaAlergenos.Add(new AlergenosDTO
+                                listaDestinos.Add(new DestinoDTO
                                 {
-                                    IdAlergeno = reader.GetInt32(reader.GetOrdinal("IdAlergeno")),
+                                    IdDestino = reader.GetInt32(reader.GetOrdinal("IdDestino")),
                                     Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
                                     Descripcion = reader.GetString(reader.GetOrdinal("Descripcion"))
                                 });
@@ -45,15 +45,15 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                     }
                 }
 
-                return listaAlergenos;
+                return listaDestinos;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al obtener la lista de Alérgenos", ex);
+                throw new Exception("Error al obtener la lista de Destinos", ex);
             }
         }
 
-        public async Task<AlergenosDTO> Crear(AlergenosDTO modelo)
+        public async Task<DestinoDTO> Crear(DestinoDTO modelo)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 {
                     await connection.OpenAsync();
 
-                    string sqlCrear = _configuration.GetSection("FichaTecnica:FtCrearAlergenos").Value.ToString();
+                    string sqlCrear = _configuration.GetSection("FichaTecnica:FtCrearDestinos").Value.ToString();
 
                     using (SqlCommand command = new SqlCommand(sqlCrear, connection))
                     {
@@ -72,27 +72,26 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
 
                         if (await respuestaDelModelo.ReadAsync())
                         {
-                            return new AlergenosDTO
+                            return new DestinoDTO
                             {
-                                IdAlergeno = respuestaDelModelo.GetInt32(respuestaDelModelo.GetOrdinal("IdAlergeno")),
                                 Nombre = respuestaDelModelo.GetString(respuestaDelModelo.GetOrdinal("Nombre")),
                                 Descripcion = respuestaDelModelo.GetString(respuestaDelModelo.GetOrdinal("Descripcion"))
                             };
                         }
                         else
                         {
-                            throw new TaskCanceledException("No se pudo crear el Alérgeno");
+                            throw new TaskCanceledException("No se pudo crear el Destino");
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al crear el Alérgeno", ex);
+                throw new Exception("Error al crear el Destino", ex);
             }
         }
 
-        public async Task<bool> Editar(AlergenosDTO modelo)
+        public async Task<bool> Editar(DestinoDTO modelo)
         {
             try
             {
@@ -100,13 +99,13 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 {
                     await connection.OpenAsync();
 
-                    string sqlEditar = _configuration.GetSection("FichaTecnica:FtEditarAlergenos").Value.ToString();
+                    string sqlEditar = _configuration.GetSection("FichaTecnica:FtEditarDestinos").Value.ToString();
 
                     using (SqlCommand command = new SqlCommand(sqlEditar, connection))
                     {
+                        command.Parameters.AddWithValue("@idDestino", modelo.IdDestino);
                         command.Parameters.AddWithValue("@Nombre", modelo.Nombre);
                         command.Parameters.AddWithValue("@Descripcion", modelo.Descripcion);
-                        command.Parameters.AddWithValue("@IdAlergenos", modelo.IdAlergeno);
 
                         int filasAfectadas = await command.ExecuteNonQueryAsync();
                         return filasAfectadas > 0;
@@ -115,7 +114,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al editar el Alérgeno", ex);
+                throw new Exception("Error al editar el Destino", ex);
             }
         }
 
@@ -127,11 +126,11 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 {
                     await connection.OpenAsync();
 
-                    string sqlEliminar = _configuration.GetSection("FichaTecnica:FtEliminarAlergenos").Value.ToString();
+                    string sqlEliminar = _configuration.GetSection("FichaTecnica:FtEliminarDestinos").Value.ToString();
 
                     using (SqlCommand command = new SqlCommand(sqlEliminar, connection))
                     {
-                        command.Parameters.AddWithValue("@IdAlergenos", id);
+                        command.Parameters.AddWithValue("@IdDestino", id);
 
                         int filasAfectadas = await command.ExecuteNonQueryAsync();
                         return filasAfectadas > 0;
@@ -140,7 +139,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al eliminar el Alérgeno", ex);
+                throw new Exception("Error al eliminar el Destino", ex);
             }
         }
     }

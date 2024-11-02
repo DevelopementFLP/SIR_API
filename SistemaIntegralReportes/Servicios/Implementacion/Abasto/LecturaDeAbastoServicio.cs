@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Data.SqlClient;
-using SistemaIntegralreportes.DTO;
 using SistemaIntegralReportes.DTO.Abasto;
-using SistemaIntegralReportes.Models.Reportes;
 using SistemaIntegralReportes.Models.Reportes.ReporteAbasto;
 using SistemaIntegralReportes.Servicios.Contrato.Abasto;
 using System.Data;
@@ -141,7 +139,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
             }
         }
 
-        public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado, DateTime? fechaDeFaena = null, decimal? peso = null)
+        public async Task<LecturaDeAbastoDTO> InsertarLectura(string lecturaDeMedia, string operacion, string usuarioLogueado, DateTime? fechaDeFaena = null)
         {
             LecturaDeAbastoDTO lecturaDeMediaInsert = new LecturaDeAbastoDTO();
             string parseoDeLectura = "";
@@ -153,10 +151,9 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                 throw new Exception("Datos inválidos proporcionados.");
             }
 
-            if (fechaDeFaena == null || peso == null)
+            if (fechaDeFaena == null)
             {
                 fechaDeFaena = DateTime.Now.Date;
-                peso = 0;
             }
 
             try
@@ -178,7 +175,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                         parseoSecuencial = lecturaDeMedia.Substring(30, 4);
                         command.Parameters.AddWithValue("@secuencial", parseoSecuencial);
 
-                        command.Parameters.AddWithValue("@peso", peso);
+                        command.Parameters.AddWithValue("@peso", 0);
+
                         command.Parameters.AddWithValue("@fechaDeFaena", fechaDeFaena);
 
                         command.Parameters.AddWithValue("@usuarioLogueado", usuarioLogueado);
@@ -189,7 +187,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                         lecturaDeMediaInsert.IdAnimal = parseoDeLectura;
                         lecturaDeMediaInsert.Secuencial = parseoSecuencial;
                         lecturaDeMediaInsert.Operacion = operacion;
-                        lecturaDeMediaInsert.Peso = peso;
+                        lecturaDeMediaInsert.Peso = 0;
                         lecturaDeMediaInsert.FechaDeFaena = fechaDeFaena;
                         lecturaDeMediaInsert.UsuarioLogueado = usuarioLogueado;
                     }
@@ -233,7 +231,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.Abasto
                                 string clasificacion = reader.GetString(7);
                                 string secuencial = reader.GetString(8);
                                 string operacion = reader.GetString(9);
-
 
 
                                 ListaDeLecturasAbasto lecturas = new ListaDeLecturasAbasto
