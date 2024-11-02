@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using SistemaIntegralReportes.DTO.Carga;
 using SistemaIntegralReportes.Models;
 using SistemaIntegralReportes.Models.StockCajas;
 using System.Data;
@@ -382,7 +383,32 @@ namespace SistemaIntegralReportes.Controllers
             }
         }
 
+
         #region ConfProductos
+
+        [HttpGet("GetConfiguracionProductoKosherAsync")]
+        public async Task<IEnumerable<ConfiguracionProductoKosherDTO>> GetConfiguracionProductoKosherAsync()
+        {
+            var query = _configuration.GetSection("Exportaciones:GetConfiguracionPrdoductoKosher").Value.ToString();
+
+            using(var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return null;
+                try
+                {
+                    connection.Open();
+                    var productos = await connection.QueryAsync<ConfiguracionProductoKosherDTO>(query, commandType: CommandType.Text);
+                    connection.Close();
+                    return productos;
+                }
+                catch (Exception ex)
+                {
+                    if(connection != null) connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
         [HttpGet("GetConfProductosAsync")]
         public async Task<IEnumerable<ConfProducto>> GetConfProductosAsync(bool esKosher)
         {
@@ -534,6 +560,55 @@ namespace SistemaIntegralReportes.Controllers
                     if (connection != null)
                         connection.Close();
                     throw new Exception(e.Message);
+                }
+            }
+        }
+
+        [HttpGet("GetPrimeraFechaPreciosAsync")]
+        public async Task<string> GetPrimeraFechaPreciosAsync(string fecha)
+        {
+            var query = _configuration.GetSection("Exportaciones:GetPrimeraFechaPrecios").Value;
+            if (string.IsNullOrEmpty(query)) return "";
+
+            query = query.Replace("@fecha_dada", fecha);
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return "";
+                try
+                {
+                    await connection.OpenAsync();
+                    var fechaAnterior = await connection.QueryAsync<DateTime?>(query, commandType: CommandType.Text);
+
+                    return fechaAnterior.FirstOrDefault()?.ToString("yyyy-MM-dd") ?? "";
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        [HttpGet("GetIdMonedaParaFechaAsync")]
+        public async Task<int> GetIdMonedaParaFechaAsync(string fecha)
+        {
+            var query = _configuration.GetSection("Exportaciones:GetIdMonedaParaFecha").Value.ToString();
+            
+            if (string.IsNullOrEmpty(query)) return 0;
+
+            query = query.Replace("@fecha", fecha);
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return 0;
+                try
+                {
+                    await connection.OpenAsync();
+                    var idMoneda = await connection.QueryAsync<int>(query, commandType: CommandType.Text);
+                    return idMoneda.FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(ex.Message);
                 }
             }
         }
