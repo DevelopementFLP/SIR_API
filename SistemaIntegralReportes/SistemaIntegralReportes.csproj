@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="averte\**" />
+    <Compile Remove="Servicios\Implementacion\Dispositivos\**" />
     <Content Remove="averte\**" />
+    <Content Remove="Servicios\Implementacion\Dispositivos\**" />
     <EmbeddedResource Remove="averte\**" />
+    <EmbeddedResource Remove="Servicios\Implementacion\Dispositivos\**" />
     <None Remove="averte\**" />
+    <None Remove="Servicios\Implementacion\Dispositivos\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,10 +43,6 @@
     <ProjectReference Include="..\52_ControlUsuariosDataAccess\52_ControlUsuariosDataAccess.csproj" />
     <ProjectReference Include="..\53_ReportesDataAccess\53_ReportesDataAccess.csproj" />
     <ProjectReference Include="..\SistemaIntegralReportes.DTO\SistemaIntegralReportes.DTO.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Servicios\Implementacion\Dispositivos\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
