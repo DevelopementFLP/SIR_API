@@ -69,7 +69,7 @@ namespace SistemaIntegralReportes.Controllers
             var data = (from acceso in _context.ConfAccesos
                         join modulo in _context.ConfModulos on acceso.IdModulo equals modulo.IdModulo
                         join reporte in _context.Reportes on acceso.IdModulo equals reporte.IdModulo
-                        where acceso.IdPerfil == idPerfil
+                        where acceso.IdPerfil == idPerfil && reporte.Activo
                         select new
                         {
                             ModuloNombre = modulo.Nombre,
