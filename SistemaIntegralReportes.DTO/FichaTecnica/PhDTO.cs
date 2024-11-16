@@ -10,6 +10,6 @@ namespace SistemaIntegralReportes.DTO.FichaTecnica
     {
         public int IdPh { get; set; }
         public string Nombre { get; set; }
-        public decimal Valor { get; set; }
+        public string Valor { get; set; }
     }
 }

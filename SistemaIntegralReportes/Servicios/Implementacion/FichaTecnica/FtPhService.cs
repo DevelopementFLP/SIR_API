@@ -38,7 +38,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                                 {
                                     IdPh = reader.GetInt32(reader.GetOrdinal("IdPh")),
                                     Nombre = reader.GetString(reader.GetOrdinal("nombre")),
-                                    Valor = reader.GetDecimal(reader.GetOrdinal("Valor")),
+                                    Valor = reader.GetString(reader.GetOrdinal("Valor")),
                                 });
                             }
                         }
@@ -76,7 +76,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                             {
                                 IdPh = respuestaDelModelo.GetInt32(respuestaDelModelo.GetOrdinal("IdPh")),
                                 Nombre = respuestaDelModelo.GetString(respuestaDelModelo.GetOrdinal("nombre")),
-                                Valor = respuestaDelModelo.GetDecimal(respuestaDelModelo.GetOrdinal("Valor")),                                
+                                Valor = respuestaDelModelo.GetString(respuestaDelModelo.GetOrdinal("Valor")),                                
                             };
                         }
                         else

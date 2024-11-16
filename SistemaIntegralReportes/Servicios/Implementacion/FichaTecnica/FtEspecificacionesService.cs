@@ -25,17 +25,15 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 {
                     await connection.OpenAsync();
 
-                    // Obtener la consulta SQL desde la configuración
+
                     string sqlConsulta = _configuration.GetSection("FichaTecnica:FtListaDeEspecificaciones").Value;
 
                     using (SqlCommand command = new SqlCommand(sqlConsulta, connection))
                     {
-                        // Ejecutar el comando y obtener los resultados
                         using (var reader = await command.ExecuteReaderAsync())
                         {
                             while (await reader.ReadAsync())
                             {
-                                // Mapear los resultados a tu DTO
                                 var especificacion = new EspecificacionesPlantillaDTO
                                 {
                                     IdPlantilla = reader.GetInt32(reader.GetOrdinal("IdPlantilla")),
@@ -73,7 +71,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 throw new Exception("Error al obtener las especificaciones de la plantilla", ex);
             }
 
-            return especificaciones;
+            return especificaciones.OrderBy(nombre => nombre.Nombre).ToList();
         }
 
 

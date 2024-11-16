@@ -71,7 +71,7 @@ namespace SistemaIntegralReportes.Controllers.FichaTecnica
             return Ok(response);
         }
 
-        [HttpDelete("EliminarDestinoFichaTecnica")]
+        [HttpDelete("EliminarDestinoFichaTecnica/{id}")]
         public async Task<IActionResult> Eliminar(int id)
         {
             var response = new ResponseDto<bool>();

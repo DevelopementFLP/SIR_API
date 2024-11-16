@@ -45,7 +45,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                     }
                 }
 
-                return listaAlergenos;
+                return listaAlergenos.OrderBy(nombre => nombre.Nombre).ToList();
             }
             catch (Exception ex)
             {

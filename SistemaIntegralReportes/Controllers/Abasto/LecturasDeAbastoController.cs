@@ -48,7 +48,7 @@ namespace SistemaIntegralReportes.Controllers.Abasto
             try
             {
                 response.EsCorrecto = true;
-                response.Resultado = await _lecturaDeMedia.InsertarLectura(lecturaDeAbasto, operacion, usuarioLogueado, fechaDeFaena, peso);
+                response.Resultado = await _lecturaDeMedia.InsertarLectura(lecturaDeAbasto, operacion, usuarioLogueado, fechaDeFaena);
 
             }
             catch (Exception ex)
