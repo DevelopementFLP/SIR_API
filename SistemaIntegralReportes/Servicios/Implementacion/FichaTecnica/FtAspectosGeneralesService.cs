@@ -66,7 +66,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 throw new Exception("Error al obtener los aspectos generales de la plantilla", ex);
             }
 
-            return aspectosGenerales;
+            return aspectosGenerales.OrderBy(nombre => nombre.Nombre).ToList();
         }
 
 

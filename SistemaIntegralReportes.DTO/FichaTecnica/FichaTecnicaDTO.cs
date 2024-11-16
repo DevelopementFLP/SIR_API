@@ -42,6 +42,7 @@ namespace SistemaIntegralReportes.DTO.FichaTecnica
         public string? Pseudomonas { get; set; }
         public string? EscherichiaColi { get; set; }
         public string? ColiformesTotales { get; set; }
+        public string? ColiformesFecales { get; set; }
         public string? Observacion { get; set; }
         public string? ElaboradoPor { get; set; }
         public string? AprobadoPor { get; set; }

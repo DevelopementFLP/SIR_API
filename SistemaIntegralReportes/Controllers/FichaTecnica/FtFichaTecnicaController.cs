@@ -17,6 +17,25 @@ namespace SistemaIntegralReportes.Controllers.FichaTecnica
             _FtFichaTecnicaServicio = ftFichaTecnicaServicio;
         }
 
+        [HttpGet("ListaDeFichasTecnicas")]
+        public async Task<IActionResult> ListaDeFichasTecnicas()
+        {
+            var response = new ResponseDto<List<FichaTecnicaDTO>>();
+
+            try
+            {
+                response.EsCorrecto = true;
+                response.Resultado = await _FtFichaTecnicaServicio.ListaDeFichasTecnicas();
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+            return Ok(response);
+        }
+
+
         // Método para crear una ficha técnica
         [HttpPost("CrearFichaTecnica")]
         public async Task<IActionResult> Crear([FromBody] FichaTecnicaDTO modelo)
@@ -61,5 +80,63 @@ namespace SistemaIntegralReportes.Controllers.FichaTecnica
             }
             return Ok(response);
         }
+
+        [HttpPut("EditarFichaTecnica")]
+        public async Task<IActionResult> Editar([FromBody] FichaTecnicaDTO modelo)
+        {
+            var response = new ResponseDto<FichaTecnicaDTO>();
+
+            try
+            {
+                var resultado = await _FtFichaTecnicaServicio.Editar(modelo);
+
+                if (resultado)
+                {
+                    response.EsCorrecto = true;
+                    response.Resultado = modelo; 
+                }
+                else
+                {
+                    response.EsCorrecto = false;
+                    response.Mensaje = "No se pudo editar la ficha técnica.";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+            return Ok(response);
+        }
+
+
+        [HttpDelete("EliminarFichaTecnica")]
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            var response = new ResponseDto<bool>();
+
+            try
+            {
+                var resultado = await _FtFichaTecnicaServicio.Eliminar(id);
+
+                if (resultado)
+                {
+                    response.EsCorrecto = true;
+                    response.Resultado = true; 
+                }
+                else
+                {
+                    response.EsCorrecto = false;
+                    response.Mensaje = "No se pudo eliminar la ficha técnica.";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+            return Ok(response);
+        }
+
     }
 }

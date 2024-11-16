@@ -24,6 +24,8 @@ using SistemaIntegralReportes.Servicios.Contrato.FichaTecnica;
 using SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica;
 using SistemaIntegralReportes.Servicios.Contrato.FichaTecnica.ConsultaDePlantillas;
 using SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica.ConsultaDePlantillas;
+using SistemaIntegralReportes.Servicios.Contrato.ControlDeCalidad.Incidentes;
+using SistemaIntegralReportes.Servicios.Implementacion.ControlDeCalidad.Incidentes;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,6 +58,7 @@ builder.Services.AddHttpClient("GecosService", client =>
     var baseUrl = builder.Configuration.GetConnectionString("GecosIntegrationService");
     client.BaseAddress = new Uri(baseUrl);
 });
+
 
 // AnimalFaenaService
 builder.Services.AddScoped<HaciendaService, AnimalHaciendaService>();
@@ -97,6 +100,10 @@ builder.Services.AddTransient(typeof(IGenericoRepositorio<>), typeof(GenericoRep
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 //Implementacion de interfaz para usarla en la API
+builder.Services.AddScoped<ITrazabilidad, TrazabilidadServicio>();
+builder.Services.AddScoped<ITipoDeIncidente, TipoDeIncidenteServicio>();
+builder.Services.AddScoped<IRegistroDeIncidente, RegistroDeIncidenteServicio>();
+
 builder.Services.AddScoped<IDispositivo, DispositivoServicio>();
 builder.Services.AddScoped<IFormateoDispositivo, FormateoDispositivoServicio>();
 builder.Services.AddScoped<ITipoDispositivo, TipoDispositivoServicio>();

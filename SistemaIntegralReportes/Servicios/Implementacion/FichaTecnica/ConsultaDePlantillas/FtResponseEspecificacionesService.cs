@@ -49,7 +49,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica.Consulta
                                     ElementosExtraños = reader.GetString(reader.GetOrdinal("elementosExtraños")),
                                     Color = reader.GetString(reader.GetOrdinal("Color")),
                                     Olor = reader.GetString(reader.GetOrdinal("Olor")),
-                                    Ph = reader.GetDecimal(reader.GetOrdinal("Ph")),
+                                    Ph = reader.GetString(reader.GetOrdinal("Ph")),
                                     AerobiosMesofilosTotales = reader.GetString(reader.GetOrdinal("aerobiosMesofilosTotales")),
                                     Enterobacterias = reader.GetString(reader.GetOrdinal("enterobacterias")),
                                     Stec0157 = reader.GetString(reader.GetOrdinal("stec0157")),
@@ -58,7 +58,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica.Consulta
                                     Estafilococos = reader.GetString(reader.GetOrdinal("estafilococos")),
                                     Pseudomonas = reader.GetString(reader.GetOrdinal("pseudomonas")),
                                     EscherichiaColi = reader.GetString(reader.GetOrdinal("escherichiaColi")),
-                                    ColiformesTotales = reader.GetString(reader.GetOrdinal("coliformesTotales"))
+                                    ColiformesTotales = reader.GetString(reader.GetOrdinal("coliformesTotales")),
+                                    ColiformesFecales = reader.GetString(reader.GetOrdinal("coliformesFecales"))
                                 };
 
                                 especificaciones.Add(especificacion);

@@ -18,7 +18,7 @@ namespace SistemaIntegralReportes.DTO.FichaTecnica.ConsultaDePlantillas
         public string ElementosExtraños { get; set; }
         public string Color { get; set; }
         public string Olor { get; set; }
-        public decimal Ph { get; set; }
+        public string Ph { get; set; }
         public string AerobiosMesofilosTotales { get; set; }
         public string Enterobacterias { get; set; }
         public string Stec0157 { get; set; }
@@ -28,6 +28,7 @@ namespace SistemaIntegralReportes.DTO.FichaTecnica.ConsultaDePlantillas
         public string Pseudomonas { get; set; }
         public string EscherichiaColi { get; set; }
         public string ColiformesTotales { get; set; }
+        public string ColiformesFecales { get; set; }
 
     }
 }
