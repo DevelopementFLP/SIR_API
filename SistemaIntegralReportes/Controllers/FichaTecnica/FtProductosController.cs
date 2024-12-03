@@ -18,6 +18,38 @@ namespace SistemaIntegralReportes.Controllers.FichaTecnica
             _ftProductosServicio = ftProductosServicio;
         }
 
+        [HttpPost("CrearProductoFichaTecnica")]
+        public async Task<IActionResult> Crear([FromBody] ProductoFichaTecnicaDTO modelo)
+        {
+            var response = new ResponseDto<ProductoFichaTecnicaDTO>();
+
+            try
+            {
+                // Llamada al servicio para crear el producto
+                var productoCreado = await _ftProductosServicio.CrearProducto(modelo);
+
+                if (productoCreado != null)
+                {
+                    response.EsCorrecto = true;
+                    response.Resultado = productoCreado;
+                    response.Mensaje = "Producto creado con éxito.";
+                }
+                else
+                {
+                    response.EsCorrecto = false;
+                    response.Mensaje = "No se pudo crear el Producto.";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+
+            return Ok(response);
+        }
+
+
         [HttpGet("BuscarProductoFichaTecnica")]
         public async Task<IActionResult> BuscarProducto(string codigoProducto)
         {

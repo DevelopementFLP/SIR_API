@@ -56,6 +56,47 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
             }
         }
 
+        public async Task<ProductoFichaTecnicaDTO> CrearProducto(ProductoFichaTecnicaDTO modelo)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    string sqlCrear = _configuration.GetSection("FichaTecnica:FtCrearProducto").Value.ToString();
+
+                    using (SqlCommand command = new SqlCommand(sqlCrear, connection))
+                    {
+                        command.Parameters.AddWithValue("@codigoDeProducto", modelo.CodigoProducto);
+                        command.Parameters.AddWithValue("@nombre", modelo.Nombre);
+                        command.Parameters.AddWithValue("@descripcionProductoEnFicha", modelo.NombreDeProductoParaFicha);
+                        command.Parameters.AddWithValue("@calibre", modelo.Calibre);
+                        command.Parameters.AddWithValue("@material", "");
+                        command.Parameters.AddWithValue("@grupoMadre", "");
+                        command.Parameters.AddWithValue("@Observacion", "");
+
+                        // Ejecutar la consulta de inserción
+                        int filasAfectadas = await command.ExecuteNonQueryAsync();
+
+                        if (filasAfectadas > 0)
+                        {
+                            return modelo;
+                        }
+                        else
+                        {
+                            throw new Exception("No se pudo crear el producto.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al crear el Producto", ex);
+            }
+        }
+
+
         public async Task<bool> Editar(ProductoFichaTecnicaDTO modelo)
         {
             try

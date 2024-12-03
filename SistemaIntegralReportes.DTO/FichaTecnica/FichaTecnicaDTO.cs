@@ -18,8 +18,8 @@ namespace SistemaIntegralReportes.DTO.FichaTecnica
         public string? TipoDeEnvase { get; set; }
         public string? PresentacionDeEnvase { get; set; }
 
-        public decimal? PesoPromedio { get; set; }
-        public int? UnidadesPorCaja { get; set; }
+        public string? PesoPromedio { get; set; }
+        public string? UnidadesPorCaja { get; set; }
         public string? Dimensiones { get; set; }
 
         public string? Idioma { get; set; }

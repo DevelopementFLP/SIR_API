@@ -27,7 +27,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
 
                 using (SqlCommand command = new SqlCommand(sqlGetImagenFichaTecnica, connection))
                 {
-                    //command.Parameters.AddWithValue("@codigoDeProducto", codigoDeProducto);
                     command.Parameters.AddWithValue("@codigoDeProducto", "%" + codigoDeProducto + "%");
 
                     using (var reader = await command.ExecuteReaderAsync())
@@ -36,7 +35,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                         {
                             var imagen = new ImagenesPlantillaDTO
                             {
-                                IdFoto = reader.GetInt32(0), // Asegúrate de que la propiedad sea "Id" y no "IdFoto"
+                                IdFoto = reader.GetInt32(0),
                                 codigoDeProducto = reader.GetString(1),
                                 SeccionDeImagen = reader.GetInt32(2),
                                 ContenidoImagen = Convert.ToBase64String((byte[])reader["imagen"])
@@ -48,7 +47,7 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 }
             }
 
-            return imagenes;
+            return imagenes.OrderBy(seccion => seccion.SeccionDeImagen).ToList();
         }
 
 
@@ -70,7 +69,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 {
                     command.Parameters.AddWithValue("@codigoDeProducto", modelo.codigoDeProducto);
                     command.Parameters.AddWithValue("@seccionDeImagen", modelo.SeccionDeImagen);
-                    command.Parameters.AddWithValue("@imagen", imagenBytes); // Usa el arreglo de bytes aquí
+                    command.Parameters.AddWithValue("@imagen", imagenBytes);
+                    command.Parameters.AddWithValue("@idFichaTecnica", idFichaTecnica);
 
                     modelo.IdFoto = (int)await command.ExecuteScalarAsync();
                 }
@@ -79,31 +79,48 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
             return modelo;
         }
 
-
         public async Task<bool> Editar(ImagenesPlantillaDTO modelo, byte[] imagenBytes)
         {
+
+            if (modelo == null || imagenBytes == null || imagenBytes.Length == 0)
+            {
+                return false; 
+            }
+
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
-                using (SqlCommand command = new SqlCommand("UPDATE imagenes_ficha_tecnica SET seccionDeImagen = @seccionDeImagen, imagen = @imagen WHERE idFoto = @idFoto", connection))
-                {
-                    command.Parameters.AddWithValue("@seccionDeImagen", modelo.SeccionDeImagen);
-                    command.Parameters.AddWithValue("@imagen", imagenBytes); // Ahora se guarda la nueva imagen
-                    command.Parameters.AddWithValue("@idFoto", modelo.IdFoto);
 
-                    return await command.ExecuteNonQueryAsync() > 0;
+                string sqlActualizarImagen = _configuration.GetSection("FichaTecnica:EditarImagenFichaTecnica").Value.ToString();
+
+                using (SqlCommand command = new SqlCommand(sqlActualizarImagen, connection))
+                {
+
+                    command.Parameters.AddWithValue("@idFoto", modelo.IdFoto); 
+                    command.Parameters.AddWithValue("@seccionDeImagen", modelo.SeccionDeImagen);
+                    command.Parameters.AddWithValue("@imagen", imagenBytes); 
+
+                    int filasAfectadas = await command.ExecuteNonQueryAsync();
+
+                    return filasAfectadas > 0;
                 }
             }
         }
+
 
         public async Task<bool> Eliminar(int id)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
-                using (SqlCommand command = new SqlCommand("DELETE FROM imagenes_ficha_tecnica WHERE idFoto = @id", connection))
+
+                string sqlEliminarImagenes = _configuration.GetSection("FichaTecnica:EditarImagenFichaTecnica").Value.ToString();
+
+
+                using (SqlCommand command = new SqlCommand(sqlEliminarImagenes, connection))
                 {
-                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@codigoDeProducto", "%" + id + "%");
+
                     return await command.ExecuteNonQueryAsync() > 0;
                 }
             }
