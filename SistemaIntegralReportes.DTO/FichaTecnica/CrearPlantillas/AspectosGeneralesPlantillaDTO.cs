@@ -20,8 +20,8 @@ namespace SistemaIntegralReportes.DTO.FichaTecnica.CrearPlantillas
         public int IdVidaUtil { get; set; }
         public int IdTipoDeEnvase { get; set; }
         public int IdPresentacionDeEnvase { get; set; }
-        public decimal PesoPromedio { get; set; }
-        public int UnidadesPorCaja { get; set; }
+        public string PesoPromedio { get; set; }
+        public string UnidadesPorCaja { get; set; }
         public string Dimensiones { get; set; }
     }
 }

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53_ReportesDataAccess", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaIntegralReportes.DTO", "..\SistemaIntegralReportes.DTO\SistemaIntegralReportes.DTO.csproj", "{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaIntegralReportes.AplicacionDePedidos", "..\SistemaIntegralReportes.AplicacionDePedidos\SistemaIntegralReportes.AplicacionDePedidos.csproj", "{3834DF63-336F-4B50-9A99-0A9DA8AC900A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaIntegralReportes.Aplicacion.Android", "..\SistemaIntegralReportes.Aplicacion.Android\SistemaIntegralReportes.Aplicacion.Android.csproj", "{B93D564D-AF61-47F5-9BA8-BA3C5F89D03F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ADB95D0-EFA9-45F0-B3F6-04971EBE6A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3834DF63-336F-4B50-9A99-0A9DA8AC900A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3834DF63-336F-4B50-9A99-0A9DA8AC900A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3834DF63-336F-4B50-9A99-0A9DA8AC900A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3834DF63-336F-4B50-9A99-0A9DA8AC900A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93D564D-AF61-47F5-9BA8-BA3C5F89D03F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93D564D-AF61-47F5-9BA8-BA3C5F89D03F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93D564D-AF61-47F5-9BA8-BA3C5F89D03F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93D564D-AF61-47F5-9BA8-BA3C5F89D03F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -24,7 +24,9 @@
     <PackageReference Include="MailKit" Version="4.4.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.9" />
     <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="6.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.16">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -42,6 +44,8 @@
   <ItemGroup>
     <ProjectReference Include="..\52_ControlUsuariosDataAccess\52_ControlUsuariosDataAccess.csproj" />
     <ProjectReference Include="..\53_ReportesDataAccess\53_ReportesDataAccess.csproj" />
+    <ProjectReference Include="..\SistemaIntegralReportes.Aplicacion.Android\SistemaIntegralReportes.Aplicacion.Android.csproj" />
+    <ProjectReference Include="..\SistemaIntegralReportes.AplicacionDePedidos\SistemaIntegralReportes.AplicacionDePedidos.csproj" />
     <ProjectReference Include="..\SistemaIntegralReportes.DTO\SistemaIntegralReportes.DTO.csproj" />
   </ItemGroup>
 

@@ -47,8 +47,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica.Consulta
                                     VidaUtil = reader.GetString(reader.GetOrdinal("VidaUtil")),
                                     TipoDeEnvase = reader.GetString(reader.GetOrdinal("TipoDeEnvase")),
                                     PresentacionDeEnvase = reader.GetString(reader.GetOrdinal("PresentacionDeEnvase")),
-                                    PesoPromedio = reader.GetDecimal(reader.GetOrdinal("pesoPromedio")),
-                                    UnidadesPorCaja = reader.GetInt32(reader.GetOrdinal("unidadesPorCaja")),
+                                    PesoPromedio = reader.GetString(reader.GetOrdinal("pesoPromedio")),
+                                    UnidadesPorCaja = reader.GetString(reader.GetOrdinal("unidadesPorCaja")),
                                     Dimensiones = reader.GetString(reader.GetOrdinal("dimensiones"))
                                 };
 

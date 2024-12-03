@@ -78,15 +78,35 @@ namespace SistemaIntegralReportes.Controllers.FichaTecnica
         }
 
 
-
         [HttpPut("EditarImagenFichaTecnica")]
-        public async Task<IActionResult> Editar([FromBody] ImagenesPlantillaDTO modelo)
+        public async Task<IActionResult> Editar([FromForm] int idFoto, [FromForm] int seccionDeImagen, [FromForm] IFormFile imagenFile)
         {
             var response = new ResponseDto<bool>();
 
             try
             {
-               // response.EsCorrecto = await _ftImagenPlantilla.Editar(modelo);
+                byte[] imagenBytes = null;
+
+                // Verifica que la imagen haya sido proporcionada
+                if (imagenFile != null && imagenFile.Length > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await imagenFile.CopyToAsync(memoryStream);
+                        imagenBytes = memoryStream.ToArray();
+                    }
+                }
+
+                // Crea un modelo con los datos de la imagen
+                var modelo = new ImagenesPlantillaDTO
+                {
+                    IdFoto = idFoto, // El ID de la imagen que se quiere editar
+                    SeccionDeImagen = seccionDeImagen
+                };
+
+                // Llama al servicio para editar la imagen, pasando los bytes de la imagen
+                response.EsCorrecto = await _ftImagenPlantilla.Editar(modelo, imagenBytes);
+
                 response.Mensaje = response.EsCorrecto ? "Imagen editada con éxito." : "No se pudo editar la imagen.";
             }
             catch (Exception ex)
@@ -94,8 +114,10 @@ namespace SistemaIntegralReportes.Controllers.FichaTecnica
                 response.EsCorrecto = false;
                 response.Mensaje = ex.Message;
             }
+
             return Ok(response);
         }
+
 
         [HttpDelete("EliminarImagenFichaTecnica")]
         public async Task<IActionResult> Eliminar(int id)

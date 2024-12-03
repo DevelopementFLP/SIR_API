@@ -25,20 +25,18 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                 {
                     await connection.OpenAsync();
 
-                    // Obtener la consulta SQL desde la configuración
                     string sqlConsulta = _configuration.GetSection("FichaTecnica:FtListaDeAspectosGenerales").Value;
 
                     using (SqlCommand command = new SqlCommand(sqlConsulta, connection))
                     {
-                        // Ejecutar el comando y obtener los resultados
+
                         using (var reader = await command.ExecuteReaderAsync())
                         {
                             while (await reader.ReadAsync())
                             {
-                                // Mapear los resultados a tu DTO
+       
                                 var aspectoGeneral = new AspectosGeneralesPlantillaDTO
                                 {
-                                    // Asegúrate de que las propiedades coincidan con los nombres de las columnas de tu base de datos
                                     IdPlantilla = reader.GetInt32(reader.GetOrdinal("IdPlantilla")),
                                     SeccionDePlantilla = reader["SeccionDePlantilla"].ToString(),
                                     Nombre = reader["Nombre"].ToString(),
@@ -50,8 +48,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                                     IdVidaUtil = (int)reader["IdVidaUtil"],
                                     IdTipoDeEnvase = (int)reader["IdTipoDeEnvase"],
                                     IdPresentacionDeEnvase = (int)reader["IdPresentacionDeEnvase"],
-                                    PesoPromedio = (decimal)reader["PesoPromedio"],
-                                    UnidadesPorCaja = (int)reader["UnidadesPorCaja"],
+                                    PesoPromedio = reader["PesoPromedio"].ToString(),
+                                    UnidadesPorCaja = reader["UnidadesPorCaja"].ToString(),
                                     Dimensiones = reader["Dimensiones"].ToString()
                                 };
 
@@ -153,8 +151,8 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                                     IdVidaUtil = (int)reader["IdVidaUtil"],
                                     IdTipoDeEnvase = (int)reader["IdTipoDeEnvase"],
                                     IdPresentacionDeEnvase = (int)reader["IdPresentacionDeEnvase"],
-                                    PesoPromedio = (decimal)reader["PesoPromedio"],
-                                    UnidadesPorCaja = (int)reader["UnidadesPorCaja"],
+                                    PesoPromedio = reader["PesoPromedio"].ToString(),
+                                    UnidadesPorCaja = reader["UnidadesPorCaja"].ToString(),
                                     Dimensiones = reader["Dimensiones"].ToString()
                                 };
                             }
