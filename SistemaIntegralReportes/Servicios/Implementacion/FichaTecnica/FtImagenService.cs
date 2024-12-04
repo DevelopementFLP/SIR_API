@@ -70,7 +70,6 @@ namespace SistemaIntegralReportes.Servicios.Implementacion.FichaTecnica
                     command.Parameters.AddWithValue("@codigoDeProducto", modelo.codigoDeProducto);
                     command.Parameters.AddWithValue("@seccionDeImagen", modelo.SeccionDeImagen);
                     command.Parameters.AddWithValue("@imagen", imagenBytes);
-                    command.Parameters.AddWithValue("@idFichaTecnica", idFichaTecnica);
 
                     modelo.IdFoto = (int)await command.ExecuteScalarAsync();
                 }
