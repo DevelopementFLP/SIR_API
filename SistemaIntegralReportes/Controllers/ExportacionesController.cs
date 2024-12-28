@@ -410,10 +410,9 @@ namespace SistemaIntegralReportes.Controllers
         }
 
         [HttpGet("GetConfProductosAsync")]
-        public async Task<IEnumerable<ConfProducto>> GetConfProductosAsync(bool esKosher)
+        public async Task<IEnumerable<ConfProducto>> GetConfProductosAsync()
         {
             var query = _configuration.GetSection("Exportaciones:GetConfProductos").Value.ToString();
-            var filter = "";
 
             using (var connection = new SqlConnection(_sirConnectionString))
             {
@@ -421,10 +420,6 @@ namespace SistemaIntegralReportes.Controllers
                 try
                 {
                     connection.Open();
-                    if (esKosher)
-                        filter = "where cp.codigoKosher is not null";
-
-                    query = query.Replace("@filter", filter);
                     var productos = await connection.QueryAsync<ConfProducto>(query, commandType: CommandType.Text);
                     connection.Close();
                     return productos;
@@ -453,6 +448,7 @@ namespace SistemaIntegralReportes.Controllers
                         using (var command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@codigoProducto", producto.CodigoProducto);
+                            command.Parameters.AddWithValue("@nomProducto", producto.NomProducto);
                             command.Parameters.AddWithValue("@codigoKosher", producto.CodigoKosher);
                             command.Parameters.AddWithValue("@clasificacionKosher", producto.ClasificacionKosher);
                             command.Parameters.AddWithValue("@markKosher", producto.MarkKosher);
