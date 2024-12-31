@@ -609,6 +609,32 @@ namespace SistemaIntegralReportes.Controllers
             }
         }
 
+        [HttpGet("GetCodigoNombreProductoAsync")]
+        public async Task<IEnumerable<ProductoDTO?>> GetNombreProductoAsync()
+        {
+            var query = _configuration.GetSection("Exportaciones:GetCodigoNombreProducto").Value.ToString();
+
+            using (var connection = new SqlConnection(_innovaConnectionString))
+            {
+                if (connection == null) return null;
+                try
+                {
+                    connection.Open();
+
+                    var productos = await connection.QueryAsync<ProductoDTO?>(query, commandType: CommandType.Text);
+
+                    connection.Close();
+                    return productos;
+                }
+                catch (Exception e)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
         #endregion
 
         #endregion
