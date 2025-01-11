@@ -14,5 +14,7 @@
         public bool Finalizada { get; set; }
         public int Id_Pallet { get; set; }
         public int Id_Carga { get; set; }
+        public bool Kosher {  get; set; }
+        public string Long_Barcode { get; set; }
     }
 }

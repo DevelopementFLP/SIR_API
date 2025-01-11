@@ -31,9 +31,8 @@ namespace SistemaIntegralReportes.Controllers
         {
             string formattedDateDesde = fechaDesde.ToString("yyyy-MM-dd");
             string formattedDateHasta = fechaHasta.ToString("yyyy-MM-dd");
-            var endpoint = $"carga/productos?fechadesde={formattedDateDesde}&fechahasta={formattedDateHasta}";
+            var endpoint = $"carga/productos?fechadesde={formattedDateDesde}&fechahasta={formattedDateHasta}&longbarcode=true";
 
-            Console.WriteLine(endpoint);
 
             HttpResponseMessage response = await _httpClient.GetAsync(endpoint);
 

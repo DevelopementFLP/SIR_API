@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using SistemaIntegralReportes.AplicacionDePedidos.Entidades;
 using SistemaIntegralReportes.DTO.Carga;
 using SistemaIntegralReportes.Models;
 using SistemaIntegralReportes.Models.StockCajas;
@@ -635,6 +636,169 @@ namespace SistemaIntegralReportes.Controllers
             }
         }
 
+        [HttpGet("GetCargaReportesAsync")]
+        public async Task<IEnumerable<CargaReporteDTO>> GetCargaReportesAsync(DateTime fechaInicio, DateTime fechaFinal)
+        {
+            var query = _configuration.GetSection("Exportaciones:GetCargaReportes").Value.ToString();
+            
+            using(var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return null;
+                try
+                {
+                    connection.Open();
+
+                    var reportes = await connection.QueryAsync<CargaReporteDTO>(
+                        query,
+                        new { fechaInicio, fechaFinal },
+                        commandType: CommandType.Text
+                    );
+                    connection.Close();
+                    return reportes;
+                }
+                catch (Exception e)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
+        [HttpGet("GetDetallesCargaReporteAsync")]
+        public async Task<IEnumerable<DetalleCargaReporteDTO>> GetDetallesCargaReporteAsync(int id)
+        {
+            var query = _configuration.GetSection("Exportaciones:GetDetallesCargaReportes").Value.ToString();
+            query = query.Replace("@id", id.ToString());
+            
+            using(var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return null;
+                try
+                {
+                    connection.Open();
+                    var detalles = await connection.QueryAsync<DetalleCargaReporteDTO>(query, commandType:CommandType.Text);
+                    connection.Close();
+                    return detalles;
+                }   
+                catch (Exception e)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
+        [HttpGet("GetNombresCargaReportesAsync")]
+        public async Task<IEnumerable<string>> GetNombresCargaReportes()
+        {
+            var query = _configuration.GetSection("Exportaciones:GetNombresCargaReportes").Value.ToString();
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return new List<string>();
+                try
+                {
+                    connection.Open();
+                    var nombres = await connection.QueryAsync<string>(query, commandType:CommandType.Text);
+                    connection.Close();
+                    return nombres;
+                }
+                catch (Exception e)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
+        [HttpPost("InsertCargaReporteAsync")]
+        public async Task<ActionResult<decimal>> InsertCargaReporteAsync([FromBody] CargaReporteDTO reporte)
+        {
+            var query = _configuration.GetSection("Exportaciones:InsertCargaReporte").Value.ToString();
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return -1;
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@nombreReporte", reporte.NombreReporte);
+                        command.Parameters.AddWithValue("@fechaInicio", reporte.FechaInicio);
+                        command.Parameters.AddWithValue("@fechaFinal", reporte.FechaFinal);
+                        var idGenerado = (decimal)await command.ExecuteScalarAsync();
+                        connection.Close();
+                        Console.WriteLine(idGenerado);
+                        return int.Parse(idGenerado.ToString());
+                    }
+                }
+                catch (Exception e)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
+        [HttpPost("InsertDetallesReporteCargaAsync")]
+        public async Task InsertDetallesReporteCargaAsync([FromBody] List<DetalleCargaReporteDTO> detalles)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+                try
+                {
+                    connection.Open();
+                    foreach (DetalleCargaReporteDTO detalle in detalles)
+                    {
+                        var query = _configuration.GetSection("Exportaciones:InsertDetalleCargaReporte").Value.ToString();
+                        using (var command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@idReporte", detalle.IdReporte);
+                            command.Parameters.AddWithValue("@idCarga", detalle.IdCarga);
+                            command.Parameters.AddWithValue("@contenedor", detalle.Contenedor);
+                            command.Parameters.AddWithValue("@pesoBruto", detalle.PesoBruto);
+                            await command.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        [HttpDelete("DeletePrecioIndividualAsync")]
+        public async Task DeletePrecioIndividualAsync([FromQuery] string codigoProducto)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+
+                try
+                {
+                    connection.Open();
+                    var query = _configuration.GetSection("Exportaciones:DeletePrecioIndividual").Value.ToString();
+
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@codigoProducto", codigoProducto);
+                        await command.ExecuteNonQueryAsync();
+                    }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
         #endregion
 
         #endregion
