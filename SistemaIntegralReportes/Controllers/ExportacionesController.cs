@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using SistemaIntegralReportes.AplicacionDePedidos.Entidades;
 using SistemaIntegralReportes.DTO.Carga;
+using SistemaIntegralReportes.EntityModels;
 using SistemaIntegralReportes.Models;
 using SistemaIntegralReportes.Models.StockCajas;
 using System.Data;
@@ -727,7 +728,7 @@ namespace SistemaIntegralReportes.Controllers
                         command.Parameters.AddWithValue("@fechaFinal", reporte.FechaFinal);
                         var idGenerado = (decimal)await command.ExecuteScalarAsync();
                         connection.Close();
-                        Console.WriteLine(idGenerado);
+     
                         return int.Parse(idGenerado.ToString());
                     }
                 }
@@ -799,6 +800,122 @@ namespace SistemaIntegralReportes.Controllers
                 }
             }
         }
+
+        [HttpGet("GetCantidadContenedoresPorIdReporteAsync")]
+        public async Task<ActionResult<int>> GetCantidadContenedoresPorIdReporteAsync([FromQuery] int idCarga)
+        {
+            var query = _configuration.GetSection("Exportaciones:SelectCantidadContenedoresPorReporte").Value.ToString();
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return -1;
+                try
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idsCarga", idCarga.ToString());
+                        var cantidad = (int)await command.ExecuteScalarAsync();
+                        connection.Close();
+
+                        return int.Parse(cantidad.ToString());
+                    }
+                }
+                catch (Exception e)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
+        [HttpDelete("DeleteReporteCargaAsync")]
+        public async Task DeleteReporteCargaAsync([FromQuery] int id)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+
+                try
+                {
+                    connection.Open();
+                    var query = _configuration.GetSection("Exportaciones:DeleteReporte").Value.ToString();
+
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id.ToString());
+                        await command.ExecuteNonQueryAsync();
+                    }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        [HttpDelete("DeleteDetallesReporteCargaAsync")]
+        public async Task DeleteDetallesReporteCargaAsync([FromQuery] int idReporte)
+        {
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return;
+
+                try
+                {
+                    connection.Open();
+                    var query = _configuration.GetSection("Exportaciones:DeleteDetallesReporte").Value.ToString();
+
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idReporte", idReporte.ToString());
+                        await command.ExecuteNonQueryAsync();
+                    }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (connection != null)
+                        connection.Close();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+
+        [HttpGet("GetIdReporteCargaAsync")]
+        public async Task<ActionResult<int>> GetIdReporteCarga([FromQuery] int idCarga)
+        {
+            var query = _configuration.GetSection("Exportaciones:GetIdReporteCarga").Value.ToString();
+            using (var connection = new SqlConnection(_sirConnectionString))
+            {
+                if (connection == null) return -1;
+                try
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idCarga", idCarga.ToString());
+                        var cantidad = (int)await command.ExecuteScalarAsync();
+                        connection.Close();
+
+                        return int.Parse(cantidad.ToString());
+                    }
+                }
+                catch (Exception e)
+                {
+                    if (connection != null) connection.Close();
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
         #endregion
 
         #endregion
